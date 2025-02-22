@@ -13,10 +13,10 @@ const Hero = () => {
             </p>
           </div>
           <div className="space-x-4">
-            <Button size="lg">Learn More</Button>
-            <Button variant="outline" size="lg">
+            <button size="lg">Learn More</button>
+            <button variant="outline" size="lg">
               Contact Us
-            </Button>
+            </button>
           </div>
         </div>
       </div>

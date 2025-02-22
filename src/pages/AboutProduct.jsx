@@ -30,7 +30,7 @@ const AboutProduct = () => {
             </div>
           </div>
           <div className="relative aspect-video rounded-xl overflow-hidden">
-            <Image
+            <img
               src="/placeholder.svg?height=400&width=600"
               alt="Solar panels installation"
               fill

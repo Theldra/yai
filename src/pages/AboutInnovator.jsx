@@ -6,7 +6,7 @@ const AboutInnovator = () => {
     <div className="container px-4 md:px-6">
     <div className="grid gap-10 px-10 md:gap-16 lg:grid-cols-2">
       <div className="relative aspect-square rounded-xl overflow-hidden">
-        <Image src="/placeholder.svg?height=400&width=400" alt="Innovator portrait" fill className="object-cover" />
+        <img src="/placeholder.svg?height=400&width=400" alt="Innovator portrait" fill className="object-cover" />
       </div>
       <div className="space-y-4">
         <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Meet the Innovator</h2>

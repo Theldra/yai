@@ -27,10 +27,10 @@ const Contact = () => {
           </div>
           <div className="space-y-4">
             <div className="grid gap-4">
-              <Input placeholder="Name" />
-              <Input placeholder="Email" type="email" />
-              <Textarea placeholder="Message" />
-              <Button className="w-full">Send Message</Button>
+              <input placeholder="Name" />
+              <input placeholder="Email" type="email" />
+              <textarea placeholder="Message" />
+              <button className="w-full">Send Message</button>
             </div>
           </div>
         </div>

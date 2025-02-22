@@ -21,7 +21,7 @@ const Navbar = () => {
             Contact
           </Link>
         </nav>
-        <Button className="hidden md:inline-flex">Get Started</Button>
+        <button className="hidden md:inline-flex">Get Started</button>
       </div>
   );
 };
