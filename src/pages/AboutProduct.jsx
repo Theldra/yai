@@ -1,4 +1,5 @@
 import React from 'react'
+import { FaLeaf, FaSun, FaUsers } from 'react-icons/fa';
 
 const AboutProduct = () => {
   return (
@@ -15,15 +16,15 @@ const AboutProduct = () => {
             </p>
             <div className="space-y-2">
               <div className="flex items-center gap-2">
-                <Sun className="h-5 w-5 text-primary" />
+                <FaSun className="h-5 w-5 text-primary" />
                 <span>Affordable solar energy systems</span>
               </div>
               <div className="flex items-center gap-2">
-                <Users className="h-5 w-5 text-primary" />
+                <FaUsers className="h-5 w-5 text-primary" />
                 <span>Community-focused price-sharing model</span>
               </div>
               <div className="flex items-center gap-2">
-                <Leaf className="h-5 w-5 text-primary" />
+                <FaLeaf className="h-5 w-5 text-primary" />
                 <span>Environmental sustainability</span>
               </div>
             </div>

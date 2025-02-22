@@ -1,4 +1,5 @@
 import React from 'react'
+import { FaCalendar, FaMapPin } from 'react-icons/fa';
 
 const AboutInnovator = () => {
   return (
@@ -16,11 +17,11 @@ const AboutInnovator = () => {
         </p>
         <div className="space-y-2">
           <div className="flex items-center gap-2">
-            <MapPin className="h-5 w-5 text-primary" />
+            <FaMapPin className="h-5 w-5 text-primary" />
             <span>Based in Sekondi, Western Region</span>
           </div>
           <div className="flex items-center gap-2">
-            <Calendar className="h-5 w-5 text-primary" />
+            <FaCalendar className="h-5 w-5 text-primary" />
             <span>Young innovator (18-35)</span>
           </div>
         </div>

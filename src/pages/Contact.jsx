@@ -1,4 +1,5 @@
 import React from 'react'
+import { FaMailBulk, FaMapPin, FaPhone } from 'react-icons/fa';
 
 const Contact = () => {
   return (
@@ -11,15 +12,15 @@ const Contact = () => {
             </p>
             <div className="space-y-2">
               <div className="flex items-center gap-2">
-                <Mail className="h-5 w-5 text-primary" />
+                <FaMailBulk className="h-5 w-5 text-primary" />
                 <span>info@epowerconstruction.com</span>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="h-5 w-5 text-primary" />
+                <FaPhone className="h-5 w-5 text-primary" />
                 <span>+233 XX XXX XXXX</span>
               </div>
               <div className="flex items-center gap-2">
-                <MapPin className="h-5 w-5 text-primary" />
+                <FaMapPin className="h-5 w-5 text-primary" />
                 <span>Sekondi, Western Region, Ghana</span>
               </div>
             </div>
