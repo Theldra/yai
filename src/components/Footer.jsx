@@ -1,60 +1,27 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { BsFillLightningFill } from 'react-icons/bs';
+import { FaLinkedin, FaTwitter } from 'react-icons/fa';
+
 
 const Footer = () => {
   return (
-    <div className="container px-4 md:px-6">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          <div className="space-y-4">
-            <h4 className="text-sm font-semibold">About Us</h4>
-            <p className="text-sm text-muted-foreground">
-              E-Power Construction provides innovative solar solutions for rural and peri-urban communities.
-            </p>
+    <footer className="bg-green-900 text-white py-8">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="flex items-center space-x-2 mb-4 md:mb-0">
+            <BsFillLightningFill className="text-yellow-400" />
+            <span className="font-bold">E-Power Construction</span>
           </div>
-          <div className="space-y-4">
-            <h4 className="text-sm font-semibold">Quick Links</h4>
-            <nav className="flex flex-col space-y-2 text-sm text-muted-foreground">
-              <Link href="#about" className="hover:underline">
-                About
-              </Link>
-              <Link href="#services" className="hover:underline">
-                Services
-              </Link>
-              <Link href="#contact" className="hover:underline">
-                Contact
-              </Link>
-            </nav>
-          </div>
-          <div className="space-y-4">
-            <h4 className="text-sm font-semibold">Resources</h4>
-            <nav className="flex flex-col space-y-2 text-sm text-muted-foreground">
-              <Link href="#" className="hover:underline">
-                Blog
-              </Link>
-              <Link href="#" className="hover:underline">
-                Case Studies
-              </Link>
-              <Link href="#" className="hover:underline">
-                FAQs
-              </Link>
-            </nav>
-          </div>
-          <div className="space-y-4">
-            <h4 className="text-sm font-semibold">Legal</h4>
-            <nav className="flex flex-col space-y-2 text-sm text-muted-foreground">
-              <Link href="#" className="hover:underline">
-                Privacy Policy
-              </Link>
-              <Link href="#" className="hover:underline">
-                Terms of Service
-              </Link>
-            </nav>
+          <div className="flex space-x-6">
+            <FaLinkedin className="text-xl cursor-pointer hover:text-green-200" />
+            <FaTwitter className="text-xl cursor-pointer hover:text-green-200" />
           </div>
         </div>
-        <div className="mt-8 border-t pt-8 text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} E-Power Construction. All rights reserved.
+        <div className="mt-4 text-center text-sm text-green-200">
+          &copy; {new Date().getFullYear()} E-Power Construction. All rights reserved.
         </div>
       </div>
+    </footer>
   );
 };
 

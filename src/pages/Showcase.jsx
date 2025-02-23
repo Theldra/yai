@@ -1,44 +1,82 @@
-import React from 'react'
-import { FaLeaf, FaSun } from 'react-icons/fa';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { FaLeaf, FaSun, FaUsers } from 'react-icons/fa';
+import { BsFillLightningFill } from 'react-icons/bs';
+import { MdSolarPower, MdWaterDrop } from 'react-icons/md';
+
 
 const Showcase = () => {
+
   return (
-    <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Our Solutions</h2>
-          <p className="max-w-[700px] text-muted-foreground">
-            Comprehensive solar energy solutions for households and agricultural needs
+    <section id="services" className="py-20">
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl font-bold text-green-800 mb-4">Our Services</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Comprehensive solar solutions for homes and agriculture.
           </p>
-        </div>
-        <div className="grid gap-6 mt-8 md:grid-cols-2 lg:grid-cols-3">
-          <div>
-            <div className="p-6 space-y-2">
-              <FaSun className="h-12 w-12 text-primary" />
-              <h3 className="text-xl font-bold">Household Solar Systems</h3>
-              <p className="text-muted-foreground">
-                Affordable solar energy systems for homes with flexible payment options through our price-sharing model.
-              </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            className="bg-white rounded-xl shadow-lg overflow-hidden"
+          >
+            <div className="bg-green-600 text-white p-6">
+              <h3 className="text-2xl font-semibold mb-2">Household Solutions</h3>
+              <p>Affordable solar energy for every home</p>
             </div>
-          </div>
-          <div>
-            <div className="p-6 space-y-2">
-              <h3 className="text-xl font-bold">Solar Irrigation</h3>
-              <p className="text-muted-foreground">
-                Solar-powered irrigation systems for farmer cooperatives, ensuring year-round water access for crops.
-              </p>
+            <div className="p-6">
+              <ul className="space-y-4">
+                <li className="flex items-center space-x-3">
+                  <FaSun className="text-green-600" />
+                  <span>Solar panel installation</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <BsFillLightningFill className="text-green-600" />
+                  <span>Battery storage systems</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <FaUsers className="text-green-600" />
+                  <span>Community power sharing</span>
+                </li>
+              </ul>
             </div>
-          </div>
-          <div>
-            <div className="p-6 space-y-2">
-              <FaLeaf className="h-12 w-12 text-primary" />
-              <h3 className="text-xl font-bold">Sustainable Solutions</h3>
-              <p className="text-muted-foreground">
-                Eco-friendly energy alternatives reducing reliance on grid electricity and fossil fuels.
-              </p>
+          </motion.div>
+
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            className="bg-white rounded-xl shadow-lg overflow-hidden"
+          >
+            <div className="bg-green-600 text-white p-6">
+              <h3 className="text-2xl font-semibold mb-2">Agricultural Solutions</h3>
+              <p>Solar-powered irrigation systems</p>
             </div>
-          </div>
+            <div className="p-6">
+              <ul className="space-y-4">
+                <li className="flex items-center space-x-3">
+                  <MdWaterDrop className="text-green-600" />
+                  <span>Irrigation systems</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <FaLeaf className="text-green-600" />
+                  <span>Sustainable farming</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <MdSolarPower className="text-green-600" />
+                  <span>Solar pump solutions</span>
+                </li>
+              </ul>
+            </div>
+          </motion.div>
         </div>
       </div>
+    </section>
   );
 };
 

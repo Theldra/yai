@@ -1,40 +1,53 @@
-import React from 'react'
-import { FaMailBulk, FaMapPin, FaPhone } from 'react-icons/fa';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { FaEnvelope, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
 
 const Contact = () => {
+
   return (
-    <div className="container px-4 md:px-6">
-        <div className="grid gap-10 px-10 md:gap-16 lg:grid-cols-2">
-          <div className="space-y-4">
-            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Get in Touch</h2>
-            <p className="text-muted-foreground">
-              Interested in our solar solutions? Contact us to learn more about how we can help power your home or farm.
-            </p>
-            <div className="space-y-2">
-              <div className="flex items-center gap-2">
-                <FaMailBulk className="h-5 w-5 text-primary" />
-                <span>info@epowerconstruction.com</span>
+    <section id="contact" className="py-20 bg-green-50">
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-2xl mx-auto bg-white rounded-xl shadow-lg p-8"
+        >
+          <h2 className="text-3xl font-bold text-green-800 mb-8 text-center">Contact Us</h2>
+          <div className="space-y-6">
+            <div className="flex items-center space-x-4">
+              <div className="bg-green-100 p-3 rounded-full">
+                <FaPhone className="text-green-600" />
               </div>
-              <div className="flex items-center gap-2">
-                <FaPhone className="h-5 w-5 text-primary" />
-                <span>+233 XX XXX XXXX</span>
+              <div>
+                <h3 className="font-semibold">Phone</h3>
+                <p className="text-gray-600">+233 (0) XXX XXX XXX</p>
               </div>
-              <div className="flex items-center gap-2">
-                <FaMapPin className="h-5 w-5 text-primary" />
-                <span>Sekondi, Western Region, Ghana</span>
+            </div>
+            
+            <div className="flex items-center space-x-4">
+              <div className="bg-green-100 p-3 rounded-full">
+                <FaEnvelope className="text-green-600" />
+              </div>
+              <div>
+                <h3 className="font-semibold">Email</h3>
+                <p className="text-gray-600">contact@epowerconstruction.com</p>
+              </div>
+            </div>
+
+            <div className="flex items-center space-x-4">
+              <div className="bg-green-100 p-3 rounded-full">
+                <FaMapMarkerAlt className="text-green-600" />
+              </div>
+              <div>
+                <h3 className="font-semibold">Location</h3>
+                <p className="text-gray-600">Sekondi, Western Region, Ghana</p>
               </div>
             </div>
           </div>
-          <div className="space-y-4">
-            <div className="grid gap-4">
-              <input placeholder="Name" />
-              <input placeholder="Email" type="email" />
-              <textarea placeholder="Message" />
-              <button className="w-full">Send Message</button>
-            </div>
-          </div>
-        </div>
+        </motion.div>
       </div>
+    </section>
   );
 };
 

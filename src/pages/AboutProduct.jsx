@@ -1,44 +1,68 @@
-import React from 'react'
-import { FaLeaf, FaSun, FaUsers } from 'react-icons/fa';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { FaLeaf, FaSun } from 'react-icons/fa';
+import { MdWaterDrop } from 'react-icons/md';
+
 
 const AboutProduct = () => {
+
   return (
-    <div className="container px-4 md:px-6">
-        <div className="grid gap-10 px-10 md:gap-16 lg:grid-cols-2">
-          <div className="space-y-4">
-            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">
-              Empowering Communities Through Solar Energy
-            </h2>
-            <p className="text-muted-foreground">
-              E-Power Construction introduces an innovative price-sharing model that makes solar energy systems
-              accessible to households and farmer cooperatives. Our solution addresses the challenge of limited access
-              to affordable and reliable energy in rural and peri-urban areas.
-            </p>
-            <div className="space-y-2">
-              <div className="flex items-center gap-2">
-                <FaSun className="h-5 w-5 text-primary" />
-                <span>Affordable solar energy systems</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <FaUsers className="h-5 w-5 text-primary" />
-                <span>Community-focused price-sharing model</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <FaLeaf className="h-5 w-5 text-primary" />
-                <span>Environmental sustainability</span>
-              </div>
+    <section id="about" className="py-20">
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl font-bold text-green-800 mb-4">Our Solution</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Innovative price-sharing model making solar energy accessible to all.
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="bg-white rounded-xl shadow-lg p-6"
+          >
+            <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
+              <FaSun className="text-3xl text-green-600" />
             </div>
-          </div>
-          <div className="relative aspect-video rounded-xl overflow-hidden">
-            <img
-              src="/placeholder.svg?height=400&width=600"
-              alt="Solar panels installation"
-              fill
-              className="object-cover"
-            />
-          </div>
+            <h3 className="text-xl font-semibold mb-2">Solar Home Systems</h3>
+            <p className="text-gray-600">
+              Affordable solar solutions for household energy needs through our unique price-sharing model.
+            </p>
+          </motion.div>
+
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="bg-white rounded-xl shadow-lg p-6"
+          >
+            <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
+              <MdWaterDrop className="text-3xl text-green-600" />
+            </div>
+            <h3 className="text-xl font-semibold mb-2">Irrigation Systems</h3>
+            <p className="text-gray-600">
+              Solar-powered irrigation solutions for farmer cooperatives ensuring year-round cultivation.
+            </p>
+          </motion.div>
+
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="bg-white rounded-xl shadow-lg p-6"
+          >
+            <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
+              <FaLeaf className="text-3xl text-green-600" />
+            </div>
+            <h3 className="text-xl font-semibold mb-2">Sustainability</h3>
+            <p className="text-gray-600">
+              Reducing reliance on fossil fuels while promoting environmental sustainability.
+            </p>
+          </motion.div>
         </div>
       </div>
+    </section>
   );
 };
 

@@ -1,33 +1,39 @@
-import React from 'react'
-import { FaCalendar, FaMapPin } from 'react-icons/fa';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { MdEngineering } from 'react-icons/md';
+import { FaLinkedin, FaTwitter } from 'react-icons/fa';
+
 
 const AboutInnovator = () => {
   return (
-    <div className="container px-4 md:px-6">
-    <div className="grid gap-10 px-10 md:gap-16 lg:grid-cols-2">
-      <div className="relative aspect-square rounded-xl overflow-hidden">
-        <img src="/placeholder.svg?height=400&width=400" alt="Innovator portrait" fill className="object-cover" />
-      </div>
-      <div className="space-y-4">
-        <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Meet the Innovator</h2>
-        <p className="text-muted-foreground">
-          Aramani Tawiah, from Sekondi, Western Region, is a visionary entrepreneur passionate about bringing
-          sustainable energy solutions to underserved communities. With a deep understanding of rural and peri-urban
-          needs, he developed E-Power Construction's innovative price-sharing model.
-        </p>
-        <div className="space-y-2">
-          <div className="flex items-center gap-2">
-            <FaMapPin className="h-5 w-5 text-primary" />
-            <span>Based in Sekondi, Western Region</span>
+    <section id="innovator" className="py-20 bg-green-50">
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-8"
+        >
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <div className="bg-green-100 w-48 h-48 rounded-full flex items-center justify-center">
+              <MdEngineering className="text-6xl text-green-600" />
+            </div>
+            <div>
+              <h2 className="text-3xl font-bold text-green-800 mb-4">Aramani Tawiah</h2>
+              <p className="text-gray-600 mb-4">
+                A visionary innovator from Sekondi, Western Region, dedicated to bringing sustainable 
+                energy solutions to rural communities through innovative price-sharing models and 
+                solar-powered systems.
+              </p>
+              <div className="flex space-x-4">
+                <FaLinkedin className="text-green-600 text-xl cursor-pointer hover:text-green-700" />
+                <FaTwitter className="text-green-600 text-xl cursor-pointer hover:text-green-700" />
+              </div>
+            </div>
           </div>
-          <div className="flex items-center gap-2">
-            <FaCalendar className="h-5 w-5 text-primary" />
-            <span>Young innovator (18-35)</span>
-          </div>
-        </div>
+        </motion.div>
       </div>
-    </div>
-  </div>
+    </section>
   );
 };
 

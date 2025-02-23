@@ -1,27 +1,37 @@
-import React from 'react'
+import React from 'react';
+import { motion } from 'framer-motion';
 
 const Hero = () => {
-    return (
-        <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center space-y-4 text-center">
-          <div className="space-y-2">
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-              Sustainable Solar Solutions for All
-            </h1>
-            <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-              Innovative price-sharing model making solar energy accessible to rural and peri-urban communities
-            </p>
-          </div>
-          <div className="space-x-4">
-            <button size="lg">Learn More</button>
-            <button variant="outline" size="lg">
-              Contact Us
-            </button>
-          </div>
-        </div>
-      </div>
-      );
-    };
-    
+  return (
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="relative h-screen bg-green-900 text-white flex items-center justify-center"
+    >
+      <div className="absolute inset-0 bg-black opacity-50"></div>
+      
+      <motion.div 
+        initial={{ y: 20 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="z-10 text-center px-4 max-w-4xl mx-auto"
+      >
+        <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          Powering Rural Communities Through Solar Innovation
+        </h1>
+        <p className="text-xl mb-8">
+          Bringing affordable and sustainable energy solutions to households and farmers across Ghana.
+        </p>
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          className="bg-yellow-400 text-green-900 px-8 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-colors"
+        >
+          Get Started
+        </motion.button>
+      </motion.div>
+    </motion.div>
+  );
+};
 
 export default Hero;
