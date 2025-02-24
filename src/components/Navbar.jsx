@@ -40,7 +40,7 @@ const Navbar = () => {
                             <MdEngineering />
                             <span>Innovator</span>
                         </Link>
-                        <Link to="/services" className="flex items-center space-x-2 hover:text-green-200 transition-colors">
+                        <Link to="/showcase" className="flex items-center space-x-2 hover:text-green-200 transition-colors">
                             <MdSolarPower />
                             <span>Showcase</span>
                         </Link>
