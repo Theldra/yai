@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { BsFillLightningFill } from 'react-icons/bs';
 import { MdClose, MdEngineering, MdMenu, MdSolarPower } from 'react-icons/md';
 import { FaBook, FaEnvelope, FaSun } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,14 +12,16 @@ const Navbar = () => {
         <nav className="bg-gradient-to-r from-green-700 to-green-900 text-white sticky top-0 z-50">
             <div className="container mx-auto px-4">
                 <div className="flex justify-between items-center py-4">
-                    <motion.div 
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        className="flex items-center space-x-2"
-                    >
-                        <BsFillLightningFill className="text-2xl text-yellow-400" />
-                        <span className="text-xl font-bold">E-Power Construction</span>
-                    </motion.div>
+                    <Link to="/">
+                        <motion.div 
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            className="flex items-center space-x-2"
+                        >
+                            <BsFillLightningFill className="text-2xl text-yellow-400" />
+                            <span className="text-xl font-bold">E-Power Construction</span>
+                        </motion.div>
+                    </Link>
 
                     <button 
                         className="md:hidden"
@@ -29,26 +32,26 @@ const Navbar = () => {
 
                     {/* Desktop Menu */}
                     <div className="hidden md:flex space-x-6">
-                        <a href="#about" className="flex items-center space-x-2 hover:text-green-200 transition-colors">
+                        <Link to="/about" className="flex items-center space-x-2 hover:text-green-200 transition-colors">
                             <FaSun />
                             <span>About</span>
-                        </a>
-                        <a href="#innovator" className="flex items-center space-x-2 hover:text-green-200 transition-colors">
+                        </Link>
+                        <Link to="/innovator" className="flex items-center space-x-2 hover:text-green-200 transition-colors">
                             <MdEngineering />
                             <span>Innovator</span>
-                        </a>
-                        <a href="#services" className="flex items-center space-x-2 hover:text-green-200 transition-colors">
+                        </Link>
+                        <Link to="/services" className="flex items-center space-x-2 hover:text-green-200 transition-colors">
                             <MdSolarPower />
                             <span>Showcase</span>
-                        </a>
-                        <a href="#resources" className="flex items-center space-x-2 hover:text-green-200 transition-colors">
+                        </Link>
+                        <Link to="/resources" className="flex items-center space-x-2 hover:text-green-200 transition-colors">
                             <FaBook />
                             <span>Resources</span>
-                        </a>
-                        <a href="#contact" className="flex items-center space-x-2 hover:text-green-200 transition-colors">
+                        </Link>
+                        <Link to="/contact" className="flex items-center space-x-2 hover:text-green-200 transition-colors">
                             <FaEnvelope />
                             <span>Contact</span>
-                        </a>
+                        </Link>
                     </div>
                 </div>
 
@@ -59,11 +62,11 @@ const Navbar = () => {
                         animate={{ opacity: 1, y: 0 }}
                         className="md:hidden py-4 space-y-4"
                     >
-                        <a href="#about" className="block py-2 hover:text-green-200">About</a>
-                        <a href="#innovator" className="block py-2 hover:text-green-200">Innovator</a>
-                        <a href="#services" className="block py-2 hover:text-green-200">Showcase</a>
-                        <a href="#resources" className="block py-2 hover:text-green-200">Resources</a>
-                        <a href="#contact" className="block py-2 hover:text-green-200">Contact</a>
+                        <Link to="/about" className="block py-2 hover:text-green-200">About</Link>
+                        <Link to="/innovator" className="block py-2 hover:text-green-200">Innovator</Link>
+                        <Link to="/services" className="block py-2 hover:text-green-200">Showcase</Link>
+                        <Link to="/resources" className="block py-2 hover:text-green-200">Resources</Link>
+                        <Link to="/contact" className="block py-2 hover:text-green-200">Contact</Link>
                     </motion.div>
                 )}
             </div>
