@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { BsFillLightningFill } from 'react-icons/bs';
 import { MdClose, MdEngineering, MdMenu, MdSolarPower } from 'react-icons/md';
-import { FaPhone, FaSun } from 'react-icons/fa';
-
+import { FaBook, FaEnvelope, FaSun } from 'react-icons/fa';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,7 +27,8 @@ const Navbar = () => {
                         {isMenuOpen ? <MdClose size={24} /> : <MdMenu size={24} />}
                     </button>
 
-                    <div className="hidden md:flex space-x-8">
+                    {/* Desktop Menu */}
+                    <div className="hidden md:flex space-x-6">
                         <a href="#about" className="flex items-center space-x-2 hover:text-green-200 transition-colors">
                             <FaSun />
                             <span>About</span>
@@ -41,8 +41,12 @@ const Navbar = () => {
                             <MdSolarPower />
                             <span>Showcase</span>
                         </a>
+                        <a href="#resources" className="flex items-center space-x-2 hover:text-green-200 transition-colors">
+                            <FaBook />
+                            <span>Resources</span>
+                        </a>
                         <a href="#contact" className="flex items-center space-x-2 hover:text-green-200 transition-colors">
-                            <FaPhone />
+                            <FaEnvelope />
                             <span>Contact</span>
                         </a>
                     </div>
@@ -58,6 +62,7 @@ const Navbar = () => {
                         <a href="#about" className="block py-2 hover:text-green-200">About</a>
                         <a href="#innovator" className="block py-2 hover:text-green-200">Innovator</a>
                         <a href="#services" className="block py-2 hover:text-green-200">Showcase</a>
+                        <a href="#resources" className="block py-2 hover:text-green-200">Resources</a>
                         <a href="#contact" className="block py-2 hover:text-green-200">Contact</a>
                     </motion.div>
                 )}
