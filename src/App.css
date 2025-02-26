@@ -1,0 +1,20 @@
+/* Add to your global CSS file */
+details summary {
+  list-style: none;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details[open] summary {
+  border-bottom: 1px solid #E5E7EB;
+}
+
+details:not([open]) {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+details[open] {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
