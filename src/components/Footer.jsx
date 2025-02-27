@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BsFillLightningFill } from 'react-icons/bs';
 import { FaEnvelope, FaFacebookF, FaInstagram, FaMapMarkerAlt, FaPhoneAlt, FaTiktok } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
+import logo from '../assets/images/e-power.png';
 
 const Footer = () => {
   return (
@@ -12,7 +12,11 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <BsFillLightningFill className="text-2xl text-yellow-400" />
+              <img 
+                src={logo} 
+                alt="E-Power Construction Logo" 
+                className="h-12 w-auto"
+              />
               <span className="text-xl font-bold">E-Power Construction</span>
             </div>
             <p className="text-green-200 text-sm">

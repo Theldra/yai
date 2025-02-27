@@ -202,87 +202,85 @@ const AdditionalResources = () => {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <div className="p-6 border-t border-green-100">
-                      {resource.id === 'faqs' ? (
-                        <div className="grid md:grid-cols-2 gap-6">
-                          {resource.content.map((faq, index) => (
-                            <details 
-                              key={index} 
-                              className="group bg-green-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
+                    {resource.id === 'faqs' ? (
+                      <div className="grid md:grid-cols-2 gap-6">
+                        {resource.content.map((faq, index) => (
+                          <details 
+                            key={index} 
+                            className="group bg-green-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
+                          >
+                            <summary 
+                              className="flex items-center justify-between p-4 cursor-pointer list-none hover:bg-green-100 transition-colors"
                             >
-                              <summary 
-                                className="flex items-center justify-between p-4 cursor-pointer list-none hover:bg-green-100 transition-colors"
-                              >
-                                <span className="font-semibold text-green-800 text-lg">
-                                  {faq.question}
-                                </span>
-                                <span className="text-green-600 transform group-open:rotate-180 transition-transform duration-300">
-                                  <FaChevronDown />
-                                </span>
-                              </summary>
-                              <div className="p-4 bg-white border-t border-green-100">
-                                <p className="text-gray-600 leading-relaxed">
-                                  {faq.answer}
-                                </p>
+                              <span className="font-semibold text-green-800 text-lg">
+                                {faq.question}
+                              </span>
+                              <span className="text-green-600 transform group-open:rotate-180 transition-transform duration-300">
+                                <FaChevronDown />
+                              </span>
+                            </summary>
+                            <div className="p-4 bg-white border-t border-green-100">
+                              <p className="text-gray-600 leading-relaxed">
+                                {faq.answer}
+                              </p>
+                            </div>
+                          </details>
+                        ))}
+                      </div>
+                    ) : resource.id === 'manual' ? (
+                      <div className="grid md:grid-cols-2 gap-6">
+                        {resource.content.map((item, index) => (
+                          <details 
+                            key={index}
+                            className="bg-green-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 group"
+                          >
+                            <summary className="p-4 cursor-pointer hover:bg-green-100 transition-colors flex items-center justify-between">
+                              <div>
+                                <h4 className="font-semibold text-green-800 text-lg">{item.title}</h4>
+                                <p className="text-gray-600 mt-1">{item.description}</p>
                               </div>
-                            </details>
-                          ))}
-                        </div>
-                      ) : resource.id === 'manual' ? (
-                        <div className="grid md:grid-cols-2 gap-6">
-                          {resource.content.map((item, index) => (
-                            <details 
-                              key={index}
-                              className="bg-green-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 group"
-                            >
-                              <summary className="p-4 cursor-pointer hover:bg-green-100 transition-colors flex items-center justify-between">
-                                <div>
-                                  <h4 className="font-semibold text-green-800 text-lg">{item.title}</h4>
-                                  <p className="text-gray-600 mt-1">{item.description}</p>
-                                </div>
-                                <span className="text-green-600 transform group-open:rotate-180 transition-transform duration-300">
-                                  <FaChevronDown className="text-xl" />
-                                </span>
-                              </summary>
-                              <div className="p-4 bg-white border-t border-green-100">
-                                <div className="grid gap-4">
-                                  {item.details?.map((section, idx) => (
-                                    <div key={idx} className="bg-green-50 p-4 rounded-lg">
-                                      <h5 className="font-semibold text-green-700 mb-3">{section.title}</h5>
-                                      <ul className="space-y-2 text-gray-600">
-                                        {section.steps.map((step, stepIdx) => (
-                                          <li key={stepIdx} className="flex items-start space-x-2">
-                                            <span className="text-green-500 mt-1">•</span>
-                                            <span>{step}</span>
-                                          </li>
-                                        ))}
-                                      </ul>
-                                    </div>
-                                  ))}
-                                </div>
-                              </div>
-                            </details>
-                          ))}
-                        </div>
-                      ) : (
-                        <div className="grid md:grid-cols-2 gap-6">
-                          {resource.content.map((tutorial, index) => (
-                            <div key={index} className="space-y-2">
-                              <h4 className="font-semibold text-gray-800">{tutorial.title}</h4>
-                              <p className="text-gray-600 mb-2">{tutorial.description}</p>
-                              <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
-                                <iframe
-                                  src={tutorial.videoUrl}
-                                  title={tutorial.title}
-                                  className="w-full h-full"
-                                  allowFullScreen
-                                ></iframe>
+                              <span className="text-green-600 transform group-open:rotate-180 transition-transform duration-300">
+                                <FaChevronDown className="text-xl" />
+                              </span>
+                            </summary>
+                            <div className="p-4 bg-white border-t border-green-100">
+                              <div className="grid gap-4">
+                                {item.details?.map((section, idx) => (
+                                  <div key={idx} className="bg-green-50 p-4 rounded-lg">
+                                    <h5 className="font-semibold text-green-700 mb-3">{section.title}</h5>
+                                    <ul className="grid grid-cols-1 gap-2 text-gray-600">
+                                      {section.steps.map((step, stepIdx) => (
+                                        <li key={stepIdx} className="flex items-start space-x-2 bg-white p-2 rounded">
+                                          <span className="text-green-500 mt-1">•</span>
+                                          <span>{step}</span>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  </div>
+                                ))}
                               </div>
                             </div>
-                          ))}
-                        </div>
-                      )}
-                    </div>
+                          </details>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="grid md:grid-cols-2 gap-6">
+                        {resource.content.map((tutorial, index) => (
+                          <div key={index} className="space-y-2">
+                            <h4 className="font-semibold text-gray-800">{tutorial.title}</h4>
+                            <p className="text-gray-600 mb-2">{tutorial.description}</p>
+                            <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
+                              <iframe
+                                src={tutorial.videoUrl}
+                                title={tutorial.title}
+                                className="w-full h-full"
+                                allowFullScreen
+                              ></iframe>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </motion.div>
                 )}
               </AnimatePresence>
