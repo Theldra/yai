@@ -1,14 +1,22 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
 import { MdClose, MdMenu } from 'react-icons/md';
 import { Link, useLocation } from 'react-router-dom';
 import { useScrollToTop } from '../hooks/useScrollToTop';
+import 'aos/dist/aos.css';
 import logo from "../assets/images/e-power.png"
+import Aos from 'aos';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const location = useLocation();
     useScrollToTop();
+
+    useEffect(() => {
+        Aos.init({
+            duration: 1000,
+            once: true
+        });
+    }, []);
 
     const handleClick = () => {
         setIsMenuOpen(false);
@@ -24,8 +32,8 @@ const Navbar = () => {
             onClick={handleClick}
             className={`transition-colors ${
                 isActive(to)
-                    ? 'text-yellow-400 font-semibold'
-                    : 'text-white hover:text-green-200'
+                    ? 'text-red-500 font-semibold' // Changed to red for active state
+                    : 'text-white hover:text-blue-200' // Changed hover to blue
             }`}
         >
             {children}
@@ -33,13 +41,12 @@ const Navbar = () => {
     );
 
     return (
-        <nav className="bg-gradient-to-r from-green-700 to-green-900 text-white sticky top-0 z-50">
+        <nav className="bg-gradient-to-r from-blue-800 to-blue-900 text-white sticky top-0 z-50 border-b-2 border-red-600"> {/* Changed gradient and added red border */}
             <div className="container mx-auto px-4">
                 <div className="flex justify-between items-center py-4">
                     <Link to="/" onClick={handleClick}>
-                        <motion.div 
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
+                        <div 
+                            data-aos="fade-right"
                             className="flex items-center space-x-2"
                         >
                             <img 
@@ -47,19 +54,19 @@ const Navbar = () => {
                                 alt="E-Power Construction Logo" 
                                 className="h-12 w-auto" 
                             />
-                            <span className="text-xl font-bold">E-Power Construction</span>
-                        </motion.div>
+                            <span className="text-xl font-bold text-white">E-Power Construction</span>
+                        </div>
                     </Link>
 
                     <button 
-                        className="md:hidden"
+                        className="md:hidden text-white hover:text-red-500 transition-colors"
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
                     >
                         {isMenuOpen ? <MdClose size={24} /> : <MdMenu size={24} />}
                     </button>
 
                     {/* Desktop Menu */}
-                    <div className="hidden md:flex space-x-6">
+                    <div className="hidden md:flex space-x-6" data-aos="fade-left">
                         <NavLink to="/about">About</NavLink>
                         <NavLink to="/innovator">Innovator</NavLink>
                         <NavLink to="/showcase">Showcase</NavLink>
@@ -70,17 +77,16 @@ const Navbar = () => {
 
                 {/* Mobile Menu */}
                 {isMenuOpen && (
-                    <motion.div 
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="md:hidden py-4 space-y-4"
+                    <div 
+                        data-aos="fade-down"
+                        className="md:hidden py-4 space-y-4 border-t border-blue-700"
                     >
                         <NavLink to="/about">About</NavLink>
                         <NavLink to="/innovator">Innovator</NavLink>
                         <NavLink to="/showcase">Showcase</NavLink>
                         <NavLink to="/resources">Resources</NavLink>
                         <NavLink to="/contact">Contact</NavLink>
-                    </motion.div>
+                    </div>
                 )}
             </div>
         </nav>

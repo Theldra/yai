@@ -18,3 +18,11 @@ details:not([open]) {
 details[open] {
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
+
+/* Add these styles to your CSS if needed */
+.hero-background {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/images/solar-panels.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

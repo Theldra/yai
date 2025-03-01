@@ -1,290 +1,191 @@
-import React, { useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { FaBook, FaChevronDown, FaChevronUp, FaQuestionCircle, FaVideo } from 'react-icons/fa';
+import React, { useEffect, useState } from 'react';
+import 'aos/dist/aos.css';
+import Aos from 'aos';
+
+// Import your media files
+import trainingImg from '../assets/images/training.jpg';
+import trainingVideo from '../assets/videos/training.mp4';
+import maintenanceImg from '../assets/images/maintenance.jpg';
+import consultationImg from '../assets/images/consultation.jpg';
+import { FaGraduationCap, FaLightbulb, FaTools, FaWrench } from 'react-icons/fa';
 
 const AdditionalResources = () => {
   const [activeSection, setActiveSection] = useState(null);
 
-  const resources = [
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+      once: true
+    });
+  }, []);
+
+  const services = [
     {
-      id: 'manual',
-      title: 'User Manual',
-      icon: <FaBook className="text-2xl text-green-600" />,
-      content: [
-        {
-          title: 'Installation Guide',
-          description: 'Complete installation process for your solar system',
-          details: [
-            {
-              title: 'Site Assessment',
-              steps: [
-                'Roof structural evaluation',
-                'Solar exposure analysis',
-                'Electrical system inspection',
-                'Mounting location determination'
-              ]
-            },
-            {
-              title: 'System Installation',
-              steps: [
-                'Mount installation',
-                'Solar panel placement',
-                'Wiring and connections',
-                'Inverter installation',
-                'Battery system setup'
-              ]
-            },
-            {
-              title: 'System Testing',
-              steps: [
-                'Connection verification',
-                'Power output testing',
-                'Backup system check',
-                'Performance monitoring setup'
-              ]
-            }
-          ]
-        },
-        {
-          title: 'Maintenance Guide',
-          description: 'Essential maintenance procedures',
-          details: [
-            {
-              title: 'Monthly Checks',
-              steps: [
-                'Panel cleaning procedure',
-                'Visual inspection for damage',
-                'Performance monitoring review',
-                'Debris removal from panels'
-              ]
-            },
-            {
-              title: 'Quarterly Maintenance',
-              steps: [
-                'Connection tightness check',
-                'Mounting hardware inspection',
-                'Inverter performance review',
-                'Battery system assessment'
-              ]
-            },
-            {
-              title: 'Annual Service',
-              steps: [
-                'Complete system inspection',
-                'Efficiency analysis',
-                'Hardware replacement assessment',
-                'Professional cleaning service'
-              ]
-            }
-          ]
-        },
-        {
-          title: 'Troubleshooting Guide',
-          description: 'Common issues and solutions',
-          details: [
-            {
-              title: 'Power Output Issues',
-              steps: [
-                'Check inverter display for error codes',
-                'Verify all connections are secure',
-                'Inspect panels for physical damage',
-                'Review recent weather conditions'
-              ]
-            },
-            {
-              title: 'Battery System Problems',
-              steps: [
-                'Check battery charge level',
-                'Verify charging cycle',
-                'Inspect battery connections',
-                'Monitor temperature conditions'
-              ]
-            },
-            {
-              title: 'Emergency Procedures',
-              steps: [
-                'System shutdown protocol',
-                'Emergency contact information',
-                'Safety measures',
-                'Documentation requirements'
-              ]
-            }
-          ]
-        }
-      ]
+      id: 'training',
+      title: "Training Services",
+      description: "Comprehensive solar technology training programs",
+      image: trainingImg,
+      video: trainingVideo,
+      icon: <FaGraduationCap className="text-2xl" />,
+      details: {
+        overview: "Professional training for solar installation and maintenance",
+        features: [
+          "Installation techniques",
+          "System maintenance",
+          "Troubleshooting skills",
+          "Safety procedures"
+        ],
+        curriculum: [
+          "Basic Solar Theory",
+          "Installation Best Practices",
+          "System Design",
+          "Maintenance Procedures"
+        ]
+      }
     },
     {
-      id: 'tutorials',
-      title: 'Video Tutorials',
-      icon: <FaVideo className="text-2xl text-red-600" />,
-      content: [
-        {
-          title: 'Getting Started',
-          description: 'Introduction to your solar power system',
-          videoUrl: 'https://youtube.com/embed/example1'
-        },
-        {
-          title: 'System Maintenance',
-          description: 'How to maintain your solar panels',
-          videoUrl: 'https://youtube.com/embed/example2'
-        }
-      ]
+      id: 'maintenance',
+      title: "Maintenance Services",
+      description: "Professional solar system maintenance",
+      image: maintenanceImg,
+      icon: <FaWrench className="text-2xl" />,
+      details: {
+        overview: "Comprehensive maintenance for optimal system performance",
+        services: [
+          "Regular system inspection",
+          "Performance monitoring",
+          "Cleaning services",
+          "Emergency repairs"
+        ],
+        schedule: [
+          "Monthly panel cleaning",
+          "Quarterly system check",
+          "Annual comprehensive service",
+          "24/7 emergency support"
+        ]
+      }
     },
     {
-      id: 'faqs',
-      title: 'FAQs',
-      icon: <FaQuestionCircle className="text-2xl text-green-600" />,
-      content: [
+      id: 'consultation',
+      title: "Consultation Services",
+      description: "Expert advice and system planning",
+      image: consultationImg,
+      icon: <FaLightbulb className="text-2xl" />,
+      details: {
+        overview: "Professional consultation for solar solutions",
+        services: [
+          "Site assessment",
+          "System design",
+          "Energy audit",
+          "ROI analysis"
+        ],
+        process: [
+          "Initial consultation",
+          "Site evaluation",
+          "Custom solution design",
+          "Implementation planning"
+        ]
+      },
+      subServices: [
         {
-          question: "How long is the installation process?",
-          answer: "A typical residential installation takes 1-2 days. Commercial installations may take 3-5 days depending on system size. Our team works efficiently to minimize disruption to your daily activities while ensuring proper installation."
+          icon: <FaLightbulb />,
+          title: "Power Audit",
+          details: "Comprehensive energy usage assessment"
         },
         {
-          question: "What maintenance do I need to perform?",
-          answer: "Regular maintenance includes: monthly panel cleaning to remove dust and debris, quarterly inspection of electrical connections and mounting hardware, and an annual professional checkup to ensure optimal system performance and longevity."
-        },
-        {
-          question: "How does the backup system work?",
-          answer: "Our battery backup system automatically detects power outages and switches to stored energy within milliseconds. This ensures uninterrupted power supply to essential appliances and equipment, with typical backup duration of 12-24 hours depending on usage."
-        },
-        {
-          question: "What warranties are included?",
-          answer: "We provide comprehensive coverage: 25-year warranty on solar panels (performance guarantee), 10-year warranty on inverters and batteries, and 5-year warranty on installation workmanship. All warranties are backed by our local service team."
-        },
-        {
-          question: "What payment options are available?",
-          answer: "We offer flexible payment solutions including our innovative price-sharing model, traditional financing through local banks, and direct purchase options. Government incentives and tax benefits may also be available to reduce your initial investment."
+          icon: <FaWrench />,
+          title: "System Maintenance",
+          details: "Regular and emergency maintenance services"
         }
       ]
     }
   ];
 
   return (
-    <section className="py-20 bg-green-50">
+    <section className="py-20 bg-blue-50">
       <div className="max-w-6xl mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+        <div
+          data-aos="fade-up"
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold text-green-800 mb-4">Additional Resources</h2>
-          <p className="text-xl text-green-600">Complete guide to your solar power system</p>
-        </motion.div>
+          <h2 className="text-4xl font-bold text-blue-800 mb-4">Our Services</h2>
+          <p className="text-xl text-blue-600">Expert solar solutions and training</p>
+        </div>
 
-        <div className="space-y-6">
-          {resources.map((resource) => (
-            <motion.div
-              key={resource.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service) => (
+            <div
+              key={service.id}
+              data-aos="fade-up"
               className="bg-white rounded-xl shadow-lg overflow-hidden"
             >
-              <button
-                onClick={() => setActiveSection(activeSection === resource.id ? null : resource.id)}
-                className="w-full p-6 flex items-center justify-between hover:bg-green-50 transition-colors"
-              >
-                <div className="flex items-center space-x-4">
-                  {resource.icon}
-                  <h3 className="text-xl font-semibold text-green-800">{resource.title}</h3>
-                </div>
-                <span className="text-green-600">
-                  {activeSection === resource.id ? <FaChevronUp /> : <FaChevronDown />}
-                </span>
-              </button>
-
-              <AnimatePresence>
-                {activeSection === resource.id && (
-                  <motion.div
-                    initial={{ height: 0 }}
-                    animate={{ height: "auto" }}
-                    exit={{ height: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="overflow-hidden"
+              <div className="relative h-48">
+                {service.video ? (
+                  <video
+                    className="w-full h-full object-cover"
+                    poster={service.image}
+                    controls
                   >
-                    {resource.id === 'faqs' ? (
-                      <div className="grid md:grid-cols-2 gap-6">
-                        {resource.content.map((faq, index) => (
-                          <details 
-                            key={index} 
-                            className="group bg-green-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
-                          >
-                            <summary 
-                              className="flex items-center justify-between p-4 cursor-pointer list-none hover:bg-green-100 transition-colors"
-                            >
-                              <span className="font-semibold text-green-800 text-lg">
-                                {faq.question}
-                              </span>
-                              <span className="text-green-600 transform group-open:rotate-180 transition-transform duration-300">
-                                <FaChevronDown />
-                              </span>
-                            </summary>
-                            <div className="p-4 bg-white border-t border-green-100">
-                              <p className="text-gray-600 leading-relaxed">
-                                {faq.answer}
-                              </p>
-                            </div>
-                          </details>
-                        ))}
-                      </div>
-                    ) : resource.id === 'manual' ? (
-                      <div className="grid md:grid-cols-2 gap-6">
-                        {resource.content.map((item, index) => (
-                          <details 
-                            key={index}
-                            className="bg-green-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 group"
-                          >
-                            <summary className="p-4 cursor-pointer hover:bg-green-100 transition-colors flex items-center justify-between">
-                              <div>
-                                <h4 className="font-semibold text-green-800 text-lg">{item.title}</h4>
-                                <p className="text-gray-600 mt-1">{item.description}</p>
-                              </div>
-                              <span className="text-green-600 transform group-open:rotate-180 transition-transform duration-300">
-                                <FaChevronDown className="text-xl" />
-                              </span>
-                            </summary>
-                            <div className="p-4 bg-white border-t border-green-100">
-                              <div className="grid gap-4">
-                                {item.details?.map((section, idx) => (
-                                  <div key={idx} className="bg-green-50 p-4 rounded-lg">
-                                    <h5 className="font-semibold text-green-700 mb-3">{section.title}</h5>
-                                    <ul className="grid grid-cols-1 gap-2 text-gray-600">
-                                      {section.steps.map((step, stepIdx) => (
-                                        <li key={stepIdx} className="flex items-start space-x-2 bg-white p-2 rounded">
-                                          <span className="text-green-500 mt-1">•</span>
-                                          <span>{step}</span>
-                                        </li>
-                                      ))}
-                                    </ul>
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-                          </details>
-                        ))}
-                      </div>
-                    ) : (
-                      <div className="grid md:grid-cols-2 gap-6">
-                        {resource.content.map((tutorial, index) => (
-                          <div key={index} className="space-y-2">
-                            <h4 className="font-semibold text-gray-800">{tutorial.title}</h4>
-                            <p className="text-gray-600 mb-2">{tutorial.description}</p>
-                            <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
-                              <iframe
-                                src={tutorial.videoUrl}
-                                title={tutorial.title}
-                                className="w-full h-full"
-                                allowFullScreen
-                              ></iframe>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </motion.div>
+                    <source src={service.video} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover"
+                  />
                 )}
-              </AnimatePresence>
-            </motion.div>
+                <div className="absolute top-4 right-4 bg-blue-800 p-2 rounded-full text-white">
+                  {service.icon}
+                </div>
+              </div>
+
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-blue-800 mb-2">{service.title}</h3>
+                <p className="text-gray-600 mb-4">{service.description}</p>
+
+                <details className="group">
+                  <summary className="flex items-center justify-between cursor-pointer list-none">
+                    <span className="text-red-500 font-semibold">Learn More</span>
+                    <span className="text-red-500 transform group-open:rotate-180 transition-transform duration-300">
+                      <FaTools />
+                    </span>
+                  </summary>
+                  <div className="mt-4 space-y-4">
+                    <p className="text-gray-600">{service.details.overview}</p>
+                    
+                    <div className="bg-blue-50 p-4 rounded-lg">
+                      <h4 className="font-semibold text-blue-800 mb-2">
+                        {service.id === 'training' ? 'Curriculum' : 'Services'}
+                      </h4>
+                      <ul className="grid gap-2">
+                        {(service.details.services || service.details.curriculum).map((item, index) => (
+                          <li key={index} className="flex items-center space-x-2">
+                            <span className="text-red-500">•</span>
+                            <span className="text-gray-600">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="bg-blue-50 p-4 rounded-lg">
+                      <h4 className="font-semibold text-blue-800 mb-2">
+                        {service.id === 'training' ? 'Features' : 'Process'}
+                      </h4>
+                      <ul className="grid gap-2">
+                        {(service.details.features || service.details.process || service.details.schedule).map((item, index) => (
+                          <li key={index} className="flex items-center space-x-2">
+                            <span className="text-red-500">•</span>
+                            <span className="text-gray-600">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </div>
           ))}
         </div>
       </div>
