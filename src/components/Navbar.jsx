@@ -32,8 +32,8 @@ const Navbar = () => {
             onClick={handleClick}
             className={`transition-colors ${
                 isActive(to)
-                    ? 'text-red-500 font-semibold' // Changed to red for active state
-                    : 'text-white hover:text-blue-200' // Changed hover to blue
+                    ? 'text-red-500 font-semibold' 
+                    : 'text-white hover:text-blue-200' 
             }`}
         >
             {children}
@@ -54,7 +54,7 @@ const Navbar = () => {
                                 alt="E-Power Construction Logo" 
                                 className="h-12 w-auto" 
                             />
-                            <span className="text-xl font-bold text-white">E-Power Construction</span>
+                            <span className="text-xl font-bold text-white">E-Powers Construction</span>
                         </div>
                     </Link>
 

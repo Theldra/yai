@@ -58,7 +58,7 @@ const AboutInnovator = () => {
                   />
                 </div>
                 <div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-blue-800 mb-2">Aramani Tawiah</h2>
+                  <h2 className="text-3xl md:text-4xl font-bold text-blue-800 mb-2">Arahamani Tawiah</h2>
                   <p className="text-xl text-gray-600">Founder & Lead Innovator</p>
                 </div>
               </div>
@@ -70,11 +70,13 @@ const AboutInnovator = () => {
                   <span className="font-semibold">Location:</span> Sekondi, Western Region, Ghana
                 </p>
                 <p className="text-gray-600 text-lg">
-                  <span className="font-semibold">Focus Area:</span> Renewable Energy & Agricultural Innovation
+                  <span className="font-semibold">Focus Area:</span> Renewable Energy
                 </p>
                 <p className="text-gray-600 text-lg leading-relaxed mt-4">
-                  A passionate innovator dedicated to bringing sustainable energy solutions to rural communities 
-                  through innovative price-sharing models and solar-powered systems.
+                  I'm Arahamani, a seasoned Renewable Energy Expert with over 6 years of experience in Electrical and Electronic Engineering. My passion for sustainable energy solutions led me to specialize in Renewable Energy Training with the prestigious National Vocational Training Institute (NVTI).
+                </p>
+                <p className="text-gray-600 text-lg leading-relaxed mt-4">
+                  In 2020, I founded E-Powers Construction with a clear mission: to accelerate the adoption of solar energy in Africa, reducing emissions and power crises. Our team is dedicated to providing innovative, reliable, and efficient solar energy solutions.
                 </p>
               </div>
             </div>
