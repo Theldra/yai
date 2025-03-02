@@ -3,7 +3,7 @@ import { MdClose, MdMenu } from 'react-icons/md';
 import { Link, useLocation } from 'react-router-dom';
 import { useScrollToTop } from '../hooks/useScrollToTop';
 import 'aos/dist/aos.css';
-import logo from "../assets/images/e-power.png"
+import logo from "../assets/images/epowers.png"
 import Aos from 'aos';
 
 const Navbar = () => {

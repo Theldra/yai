@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import 'aos/dist/aos.css';
 import Aos from 'aos';
-import bgVideo from '../assets/videos/panelvid.mp4';
 import bgImage1 from '../assets/images/bground.jpg';
-import bgImage2 from '../assets/images/roof.jpg';
+import bgImage2 from '../assets/images/roof.jpeg';
 
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isVideoPlaying, setIsVideoPlaying] = useState(true);
   
   const backgroundImages = [
     bgImage1,
@@ -20,32 +18,19 @@ const Hero = () => {
       once: true
     });
 
-    const intervalId = !isVideoPlaying && setInterval(() => {
+    const intervalId = setInterval(() => {
       setCurrentImageIndex((prevIndex) => 
         prevIndex === backgroundImages.length - 1 ? 0 : prevIndex + 1
       );
     }, 5000);
 
     return () => intervalId && clearInterval(intervalId);
-  }, [isVideoPlaying]);
+  }, []);
 
   return (
     <div className="relative h-screen text-white flex items-center justify-center overflow-hidden">
-      {/* Video Background */}
-      <video
-        autoPlay
-        muted
-        loop
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-          isVideoPlaying ? 'opacity-100' : 'opacity-0'
-        }`}
-        onEnded={() => setIsVideoPlaying(false)}
-      >
-        <source src={bgVideo} type="video/mp4" />
-      </video>
-
       {/* Image Backgrounds */}
-      {!isVideoPlaying && backgroundImages.map((image, index) => (
+      {backgroundImages.map((image, index) => (
         <div
           key={index}
           className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
@@ -73,14 +58,14 @@ const Hero = () => {
           data-aos-delay="200"
           className="text-4xl md:text-6xl font-bold mb-6"
         >
-          Your Complete Solar Energy Partner
+          E-Powers Construction
         </h1>
         <p 
           data-aos="fade-up"
           data-aos-delay="400"
           className="text-xl mb-8"
         >
-          Powering Tomorrow with Expert Solar Solutions
+          Total Solutions
         </p>
         <button
           data-aos="fade-up"

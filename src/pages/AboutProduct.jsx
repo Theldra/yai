@@ -3,6 +3,7 @@ import 'aos/dist/aos.css';
 import Aos from 'aos';
 import { MdVerified, MdWaterDrop } from 'react-icons/md';
 import { FaLeaf } from 'react-icons/fa';
+import howItWorksVideo from '../assets/videos/howitworks.mp4';
 
 const AboutProduct = () => {
   useEffect(() => {
@@ -98,6 +99,28 @@ const AboutProduct = () => {
               <p className="text-gray-600">Consistent water flow for industrial production</p>
             </div>
           </div>
+        </div>
+
+        {/* How It Works Section */}
+        <div
+          data-aos="fade-up"
+          className="max-w-4xl mx-auto bg-blue-50 rounded-2xl shadow-xl p-8 mb-16"
+        >
+          <h2 className="text-3xl font-bold text-blue-800 mb-6">How It Works</h2>
+          <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden mb-6">
+            <video
+              className="w-full h-full object-cover"
+              controls
+              poster="/path-to-thumbnail.jpg" // Optional: Add a thumbnail image
+            >
+              <source src={howItWorksVideo} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p className="text-lg text-gray-600 leading-relaxed">
+            Watch our short video to understand how our solar solutions work and how they can benefit your home or business. 
+            From initial consultation to installation and maintenance, we guide you through every step of your solar journey.
+          </p>
         </div>
 
         {/* Our Mission and Vision */}

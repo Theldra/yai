@@ -3,13 +3,13 @@ import { FaBatteryFull, FaBolt, FaCheckCircle, FaPlug, FaSun } from 'react-icons
 import { MdCable, MdSolarPower } from 'react-icons/md';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import solarPanelImg from '../assets/images/solar-panel.jpg';
-import inverterImg from '../assets/images/inverter.jpg';
-import batteryImg from '../assets/images/battery.jpg';
-import cableImg from '../assets/images/cable.jpg';
-import railsImg from '../assets/images/rails.jpg';
+import solarPanelImg from '../assets/images/solarpan.webp';
+import inverterImg from '../assets/images/energy.jpeg';
+import batteryImg from '../assets/images/sbattery.jpeg';
+import cableImg from '../assets/images/cables.jpg';
+import railsImg from '../assets/images/rrail.jpg';
 import breakerImg from '../assets/images/breaker.jpg';
-import connectorImg from '../assets/images/connector.jpg';
+import connectorImg from '../assets/images/connectors.jpg';
 
 const Showcase = () => {
   useEffect(() => {
@@ -125,26 +125,27 @@ const Showcase = () => {
               data-aos-delay={index * 100}
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
             >
-              <div className="relative h-48">
+              {/* Increased height from h-48 to h-64 for better image display */}
+              <div className="relative h-64 md:h-72 lg:h-80">
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center"
                 />
-                <div className="absolute top-4 right-4 bg-blue-800 p-2 rounded-full text-white">
-                  {item.icon}
+                <div className="absolute top-4 right-4 bg-blue-800 p-3 rounded-full text-white">
+                  <span className="text-xl">{item.icon}</span>
                 </div>
               </div>
 
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-blue-800 mb-2">{item.title}</h3>
-                <p className="text-gray-600 mb-4">{item.description}</p>
+              <div className="p-8"> {/* Increased padding from p-6 to p-8 */}
+                <h3 className="text-2xl font-bold text-blue-800 mb-3">{item.title}</h3>
+                <p className="text-gray-600 mb-6 text-lg">{item.description}</p>
                 
-                <div className="space-y-2">
+                <div className="space-y-3"> {/* Increased spacing */}
                   {item.specs.map((spec, idx) => (
-                    <div key={idx} className="flex items-center space-x-2">
-                      <FaCheckCircle className="text-red-500 flex-shrink-0" />
-                      <span className="text-sm text-gray-600">{spec}</span>
+                    <div key={idx} className="flex items-center space-x-3">
+                      <FaCheckCircle className="text-red-500 flex-shrink-0 text-lg" />
+                      <span className="text-gray-600">{spec}</span>
                     </div>
                   ))}
                 </div>

@@ -3,10 +3,10 @@ import 'aos/dist/aos.css';
 import Aos from 'aos';
 
 // Import your media files
-import trainingImg from '../assets/images/training.jpg';
-import trainingVideo from '../assets/videos/training.mp4';
-import maintenanceImg from '../assets/images/maintenance.jpg';
-import consultationImg from '../assets/images/consultation.jpg';
+import trainingImg from '../assets/images/practice.jpeg';
+import trainingVideo from '../assets/videos/tutorial.mp4';
+import maintenanceImg from '../assets/images/maintain.jpeg';
+import consultationImg from '../assets/images/consult.jpg';
 import { FaGraduationCap, FaLightbulb, FaTools, FaWrench } from 'react-icons/fa';
 
 const AdditionalResources = () => {
