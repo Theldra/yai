@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import 'aos/dist/aos.css';
 import Aos from 'aos';
 import { MdVerified, MdWaterDrop } from 'react-icons/md';
-import { FaLeaf } from 'react-icons/fa';
+import { FaLeaf, FaCheckCircle } from 'react-icons/fa';
 import howItWorksVideo from '../assets/videos/howitworks.mp4';
 
 const AboutProduct = () => {
@@ -13,91 +13,138 @@ const AboutProduct = () => {
     });
   }, []);
 
+  // Main heading style
+  const mainHeading = "text-6xl font-bold text-blue-800 mb-6";
+  // Section heading style
+  const sectionHeading = "text-4xl font-bold text-blue-800 mb-6";
+  // Card heading style
+  const cardHeading = "text-3xl font-bold text-blue-800 mb-4";
+  // Body text style
+  const bodyText = "text-xl text-gray-600 leading-relaxed";
+  // Icon size
+  const iconSize = "text-4xl";
+
   return (
     <section id="about" className="py-20">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-8">
         {/* About Us Heading */}
-        <div
-          data-aos="fade-up"
-          className="text-center mb-16"
-        >
-          <h1 className="text-5xl font-bold text-blue-800 mb-4">About Us</h1>
-          <div className="w-24 h-1 bg-red-500 mx-auto"></div>
+        <div data-aos="fade-up" className="text-center mb-16">
+          <h1 className={mainHeading}>About Us</h1>
+          <div className="w-40 h-2 bg-red-500 mx-auto"></div>
         </div>
 
         {/* Company Overview */}
-        <div
-          data-aos="fade-up"
-          className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-8 mb-16"
-        >
-          <h2 className="text-3xl font-bold text-blue-800 mb-6">Who We Are</h2>
-          <p className="text-lg text-gray-600 leading-relaxed">
+        <div data-aos="fade-up" className="max-w-7xl mx-auto bg-white rounded-2xl shadow-xl p-12 mb-16">
+          <h2 className={sectionHeading}>Who We Are</h2>
+          <p className={bodyText}>
             E-Powers Construction was founded in 2020 with a clear mission: to accelerate the adoption of solar energy 
-            in Africa, reducing emissions and power crises. Our team is dedicated to providing innovative, reliable, 
-            and efficient solar energy solutions.
-          </p>
-          <p className="text-lg text-gray-600 leading-relaxed mt-4">
-            We are committed to delivering sustainable and cost-effective energy solutions for residential, commercial, 
-            industrial, and agricultural applications. Our expertise extends to designing and installing comprehensive 
-            solar power systems that meet diverse needs.
+            in Africa, reducing emissions and power crises.
           </p>
         </div>
 
-        {/* New System Types Section */}
-        <div
-          data-aos="fade-up"
-          className="max-w-4xl mx-auto bg-blue-50 rounded-2xl shadow-xl p-8 mb-16"
-        >
-          <h2 className="text-3xl font-bold text-blue-800 mb-6">Our Solar Solutions</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-white rounded-xl p-6 shadow-md">
-              <h3 className="text-xl font-semibold text-blue-800 mb-4">Solar Backup Systems</h3>
-              <p className="text-gray-600">Ensure uninterrupted power supply during outages</p>
-            </div>
-            <div className="bg-white rounded-xl p-6 shadow-md">
-              <h3 className="text-xl font-semibold text-blue-800 mb-4">Off-Grid Systems</h3>
-              <p className="text-gray-600">Independent solar power solutions for remote areas or energy independence</p>
-            </div>
-            <div className="bg-white rounded-xl p-6 shadow-md">
-              <h3 className="text-xl font-semibold text-blue-800 mb-4">Grid-Tied Systems</h3>
-              <p className="text-gray-600">Harness solar energy while still connected to the grid</p>
-            </div>
+        {/* Mission & Vision */}
+        <div data-aos="fade-up" className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 mb-16">
+          <div className="bg-blue-800 text-white rounded-2xl shadow-xl p-12 transform hover:scale-105 transition-transform duration-300">
+            <h3 className="text-3xl font-bold mb-4">Our Mission</h3>
+            <div className="w-24 h-1 bg-red-500 mb-6"></div>
+            <p className="text-xl leading-relaxed">
+              To accelerate the adoption of solar energy in Africa, reducing emissions and power crises while 
+              providing innovative, reliable, and efficient solutions.
+            </p>
           </div>
           
-          <div className="mt-8 bg-white rounded-xl p-6">
-            <h3 className="text-xl font-semibold text-blue-800 mb-4">System Features</h3>
-            <ul className="grid md:grid-cols-2 gap-4">
-              <li className="flex items-center space-x-2">
-                <span className="text-red-500">•</span>
-                <span className="text-gray-600">Real-time monitoring systems</span>
-              </li>
-              <li className="flex items-center space-x-2">
-                <span className="text-red-500">•</span>
-                <span className="text-gray-600">Remote access via mobile app</span>
-              </li>
-            </ul>
+          <div className="bg-white rounded-2xl shadow-xl p-12 transform hover:scale-105 transition-transform duration-300">
+            <h3 className={cardHeading}>Our Vision</h3>
+            <div className="w-24 h-1 bg-red-500 mb-6"></div>
+            <p className={bodyText}>
+              To be Africa's leading provider of innovative solar energy solutions, driving the transition to a 
+              greener and more energy-efficient future.
+            </p>
           </div>
         </div>
 
-        {/* New Water Systems Section */}
+        {/* Solar Solutions */}
+        <div data-aos="fade-up" className="max-w-7xl mx-auto mb-16">
+          <h2 className={`${sectionHeading} text-center`}>Our Solar Solutions</h2>
+          <div className="grid md:grid-cols-3 gap-10">
+            {['Solar Backup Systems', 'Off-Grid Systems', 'Grid-Tied Systems'].map((system) => (
+              <div key={system} className="bg-white rounded-xl p-10 shadow-lg hover:shadow-2xl transition-shadow">
+                <h3 className={cardHeading}>{system}</h3>
+                <div className="w-20 h-1 bg-red-500 mb-6"></div>
+                <p className={bodyText}>
+                  {system === 'Solar Backup Systems' && 'Ensure uninterrupted power supply during outages'}
+                  {system === 'Off-Grid Systems' && 'Independent solar solutions for remote areas'}
+                  {system === 'Grid-Tied Systems' && 'Harness solar energy while connected to the grid'}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Water Systems - Visual Cards */}
         <div
           data-aos="fade-up"
-          className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-8 mb-16"
+          className="max-w-6xl mx-auto bg-blue-50 rounded-2xl shadow-xl p-12 mb-20"
         >
-          <h2 className="text-3xl font-bold text-blue-800 mb-6">Solar-Powered Water Systems</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="border-l-4 border-red-500 pl-4">
-              <h3 className="text-xl font-semibold text-blue-800 mb-2">Agriculture</h3>
-              <p className="text-gray-600">Irrigation systems for farms and rural communities</p>
-            </div>
-            <div className="border-l-4 border-red-500 pl-4">
-              <h3 className="text-xl font-semibold text-blue-800 mb-2">Communities</h3>
-              <p className="text-gray-600">Clean water supply for residential areas</p>
-            </div>
-            <div className="border-l-4 border-red-500 pl-4">
-              <h3 className="text-xl font-semibold text-blue-800 mb-2">Companies</h3>
-              <p className="text-gray-600">Consistent water flow for industrial production</p>
-            </div>
+          <h2 className="text-4xl font-bold text-blue-800 text-center mb-12">Solar-Powered Water Systems</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { title: 'Agriculture', desc: 'Irrigation systems for farms' },
+              { title: 'Communities', desc: 'Clean water supply systems' },
+              { title: 'Industries', desc: 'Consistent water flow solutions' }
+            ].map((item) => (
+              <div key={item.title} 
+                className="bg-white rounded-xl p-8 text-center transform hover:-translate-y-2 transition-transform duration-300"
+              >
+                <MdWaterDrop className="text-5xl text-red-500 mx-auto mb-4" />
+                <h3 className="text-2xl font-bold text-blue-800 mb-4">{item.title}</h3>
+                <p className="text-lg text-gray-600">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Services & Products - Two Column Layout */}
+        <div
+          data-aos="fade-up"
+          className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 mb-20"
+        >
+          {/* Services */}
+          <div className="bg-white rounded-2xl shadow-xl p-12">
+            <h2 className="text-3xl font-bold text-blue-800 mb-8">Our Services</h2>
+            <ul className="space-y-4 text-lg text-gray-600">
+              {[
+                'Solar Installation',
+                'Solar-Powered Borehole Systems',
+                'Maintenance & Repairs',
+                'Power Audit & Consultation',
+                'Training Services'
+              ].map((service) => (
+                <li key={service} className="flex items-center space-x-3">
+                  <FaCheckCircle className="text-red-500 flex-shrink-0" />
+                  <span>{service}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Products */}
+          <div className="bg-blue-50 rounded-2xl shadow-xl p-12">
+            <h2 className="text-3xl font-bold text-blue-800 mb-8">Our Products</h2>
+            <ul className="space-y-4 text-lg text-gray-600">
+              {[
+                'Solar Panels',
+                'Inverters',
+                'Solar Batteries',
+                'Cables & Rails',
+                'Breakers & Connectors'
+              ].map((product) => (
+                <li key={product} className="flex items-center space-x-3">
+                  <FaCheckCircle className="text-red-500 flex-shrink-0" />
+                  <span>{product}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
@@ -123,89 +170,24 @@ const AboutProduct = () => {
           </p>
         </div>
 
-        {/* Our Mission and Vision */}
-        <div
-          data-aos="fade-up"
-          className="max-w-4xl mx-auto bg-blue-50 rounded-2xl shadow-xl p-8 mb-16"
-        >
-          <h2 className="text-3xl font-bold text-blue-800 mb-6">Our Mission & Vision</h2>
-          <div className="space-y-6">
-            <div className="border-l-4 border-red-500 pl-4">
-              <h3 className="text-xl font-semibold text-blue-800">Our Mission</h3>
-              <p className="text-lg text-gray-600 mt-2">
-                To accelerate the adoption of solar energy in Africa, reducing emissions and power crises while 
-                providing innovative, reliable, and efficient solar energy solutions that enhance livelihoods 
-                and foster economic growth.
-              </p>
-            </div>
-            <div className="border-l-4 border-red-500 pl-4">
-              <h3 className="text-xl font-semibold text-blue-800">Our Vision</h3>
-              <p className="text-lg text-gray-600 mt-2">
-                To be the leading provider of innovative solar energy solutions, driving the transition to a 
-                greener and more energy-efficient future across Africa.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Our Services */}
-        <div
-          data-aos="fade-up"
-          className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-8 mb-16"
-        >
-          <h2 className="text-3xl font-bold text-blue-800 mb-6">Our Services</h2>
-          <ul className="list-disc list-inside text-lg text-gray-600 space-y-3">
-            <li>Solar Installation</li>
-            <li>Solar-Powered Borehole Systems for Domestic & Industrial Use</li>
-            <li>Maintenance & Repairs</li>
-            <li>Power Audit & Consultation</li>
-            <li>Training Services</li>
-            <li>Sales of Solar Products & Accessories</li>
-          </ul>
-        </div>
-
-        {/* Our Products */}
-        <div
-          data-aos="fade-up"
-          className="max-w-4xl mx-auto bg-blue-50 rounded-2xl shadow-xl p-8 mb-16"
-        >
-          <h2 className="text-3xl font-bold text-blue-800 mb-6">Our Products</h2>
-          <ul className="list-disc list-inside text-lg text-gray-600 space-y-3">
-            <li>Solar Panels</li>
-            <li>Inverters</li>
-            <li>Solar Batteries</li>
-            <li>Cables & Rails</li>
-            <li>Breakers & Connectors</li>
-          </ul>
-        </div>
-
         {/* Accreditations & Approvals */}
-        <div
-          data-aos="fade-up"
-          className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-8 mb-16"
-        >
-          <h2 className="text-3xl font-bold text-blue-800 mb-6">Accreditations & Approvals</h2>
-          <p className="text-lg text-gray-600 mb-6">
+        <div data-aos="fade-up" className="max-w-7xl mx-auto bg-white rounded-2xl shadow-xl p-12 mb-16">
+          <h2 className={sectionHeading}>Accreditations & Approvals</h2>
+          <p className={bodyText}>
             E-Powers Construction is officially recognized and approved by key regulatory bodies in Ghana:
           </p>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="flex flex-col items-center p-6 bg-blue-50 rounded-xl">
-              <MdVerified className="text-3xl text-red-500 mb-3" />
-              <h3 className="font-semibold text-blue-800 text-lg mb-2">Energy Commission</h3>
-              <p className="text-gray-600 text-center text-sm">Certified for renewable energy solutions</p>
-            </div>
-
-            <div className="flex flex-col items-center p-6 bg-blue-50 rounded-xl">
-              <MdWaterDrop className="text-3xl text-red-500 mb-3" />
-              <h3 className="font-semibold text-blue-800 text-lg mb-2">Ghana Water</h3>
-              <p className="text-gray-600 text-center text-sm">Approved for water management systems</p>
-            </div>
-
-            <div className="flex flex-col items-center p-6 bg-blue-50 rounded-xl">
-              <FaLeaf className="text-3xl text-red-500 mb-3" />
-              <h3 className="font-semibold text-blue-800 text-lg mb-2">EPA</h3>
-              <p className="text-gray-600 text-center text-sm">Environmental Protection Agency certified</p>
-            </div>
+          <div className="grid md:grid-cols-3 gap-10 mt-10">
+            {[
+              { icon: <MdVerified />, title: "Energy Commission", desc: "Certified for renewable energy solutions" },
+              { icon: <MdWaterDrop />, title: "Ghana Water", desc: "Approved for water management systems" },
+              { icon: <FaLeaf />, title: "EPA", desc: "Environmental Protection Agency certified" }
+            ].map((item) => (
+              <div key={item.title} className="flex flex-col items-center p-8 bg-blue-50 rounded-xl">
+                <div className={`${iconSize} text-red-500 mb-4`}>{item.icon}</div>
+                <h3 className="text-2xl font-bold text-blue-800 mb-3">{item.title}</h3>
+                <p className={bodyText}>{item.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

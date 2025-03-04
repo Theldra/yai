@@ -8,32 +8,31 @@ const Footer = () => {
   const businessHours = [
     { day: 'Monday - Friday', hours: '8:00 AM - 5:00 PM' },
     { day: 'Saturday', hours: '8:00 AM - 2:00 PM' },
-    { day: 'Sunday', hours: 'Closed' }
   ];
 
   return (
-    <footer className="bg-blue-900 text-white py-12">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
-          {/* Logo and Description - make it span 2 columns */}
-          <div className="space-y-4 md:col-span-2">
-            <div className="flex items-center space-x-2">
+    <footer className="bg-blue-900 text-white py-16">
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
+          {/* Logo and Description */}
+          <div className="space-y-6 md:col-span-2">
+            <div className="flex items-center space-x-3">
               <img 
                 src={logo} 
                 alt="E-Power Construction Logo" 
-                className="h-12 w-auto"
+                className="h-16 w-auto"
               />
-              <span className="text-xl font-bold">E-Powers Construction</span>
+              <span className="text-2xl font-bold">E-Powers Construction</span>
             </div>
-            <p className="text-blue-200 text-sm">
+            <p className="text-blue-200 text-lg leading-relaxed">
               Leading the way in innovative solar energy solutions, electrical installations, and sustainable power systems for residential, commercial, and industrial clients in Ghana.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
+            <h3 className="text-2xl font-semibold mb-6">Quick Links</h3>
+            <ul className="space-y-4">
               {[
                 { name: 'About', path: '/about' },
                 { name: 'Innovator', path: '/innovator' },
@@ -44,7 +43,7 @@ const Footer = () => {
                 <li key={item.name}>
                   <Link
                     to={item.path}
-                    className="text-blue-200 hover:text-red-400 transition-colors duration-300"
+                    className="text-blue-200 hover:text-red-400 transition-colors duration-300 text-lg"
                   >
                     {item.name}
                   </Link>
@@ -53,16 +52,16 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Business Hours - New Section */}
+          {/* Business Hours */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Business Hours</h3>
-            <ul className="space-y-3">
+            <h3 className="text-2xl font-semibold mb-6">Business Hours</h3>
+            <ul className="space-y-4">
               {businessHours.map((schedule, index) => (
-                <li key={index} className="flex items-center space-x-3">
-                  <FaClock className="text-red-400" />
+                <li key={index} className="flex items-center space-x-4">
+                  <FaClock className="text-red-400 text-xl" />
                   <div>
-                    <p className="text-blue-200 font-medium">{schedule.day}</p>
-                    <p className="text-blue-200 text-sm">{schedule.hours}</p>
+                    <p className="text-blue-200 font-medium text-lg">{schedule.day}</p>
+                    <p className="text-blue-200 text-lg">{schedule.hours}</p>
                   </div>
                 </li>
               ))}
@@ -71,27 +70,27 @@ const Footer = () => {
 
           {/* Contact Information */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-            <ul className="space-y-3">
-              <li className="flex items-center space-x-3">
-                <FaPhoneAlt className="text-red-400" />
-                <span className="text-blue-200">+233 (0) 592 812 035</span>
+            <h3 className="text-2xl font-semibold mb-6">Contact Us</h3>
+            <ul className="space-y-4">
+              <li className="flex items-center space-x-4">
+                <FaPhoneAlt className="text-red-400 text-xl" />
+                <span className="text-blue-200 text-lg">+233 (0) 592 812 035</span>
               </li>
-              <li className="flex items-center space-x-3">
-                <FaEnvelope className="text-red-400" />
-                <span className="text-blue-200">info@epowerconstruction.com</span>
+              <li className="flex items-center space-x-4">
+                <FaEnvelope className="text-red-400 text-xl" />
+                <span className="text-blue-200 text-lg">info@epowerconstruction.com</span>
               </li>
-              <li className="flex items-center space-x-3">
-                <FaMapMarkerAlt className="text-red-400" />
-                <span className="text-blue-200">Sekondi, Western Region, Ghana</span>
+              <li className="flex items-center space-x-4">
+                <FaMapMarkerAlt className="text-red-400 text-xl" />
+                <span className="text-blue-200 text-lg">Sekondi, Western Region, Ghana</span>
               </li>
             </ul>
           </div>
 
           {/* Social Media Links */}
           <div className="md:col-span-2">
-            <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
-            <div className="flex space-x-4">
+            <h3 className="text-2xl font-semibold mb-6">Follow Us</h3>
+            <div className="flex space-x-5">
               {[
                 { icon: <FaFacebookF />, url: "https://www.facebook.com/share/1FJzgYA6FU/?mibextid=wwXIfr" },
                 { icon: <FaXTwitter />, url: "https://x.com/epowersgh?s=21" },
@@ -104,9 +103,9 @@ const Footer = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-blue-800 p-3 rounded-full hover:bg-red-500 transition-colors duration-300"
+                  className="bg-blue-800 p-4 rounded-full hover:bg-red-500 transition-colors duration-300"
                 >
-                  <span className="text-white text-xl">
+                  <span className="text-white text-2xl">
                     {social.icon}
                   </span>
                 </a>
@@ -116,7 +115,7 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-blue-800 mt-8 pt-8 text-center text-sm text-blue-200">
+        <div className="border-t border-blue-800 mt-10 pt-8 text-center text-lg text-blue-200">
           &copy; {new Date().getFullYear()} E-Powers Construction. All rights reserved.
         </div>
       </div>

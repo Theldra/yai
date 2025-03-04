@@ -103,10 +103,10 @@ const AdditionalResources = () => {
 
   return (
     <section className="py-20 bg-blue-50">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4"> 
         <div
           data-aos="fade-up"
-          className="text-center mb-12"
+          className="text-center mb-16" 
         >
           <h2 className="text-4xl font-bold text-blue-800 mb-4">Our Services</h2>
           <p className="text-xl text-blue-600">Expert solar solutions and training</p>
@@ -117,9 +117,10 @@ const AdditionalResources = () => {
             <div
               key={service.id}
               data-aos="fade-up"
-              className="bg-white rounded-xl shadow-lg overflow-hidden"
+              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
             >
-              <div className="relative h-48">
+              {/* Increased image container height */}
+              <div className="relative h-64 md:h-72 lg:h-80">
                 {service.video ? (
                   <video
                     className="w-full h-full object-cover"
@@ -133,23 +134,23 @@ const AdditionalResources = () => {
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-center"
                   />
                 )}
-                <div className="absolute top-4 right-4 bg-blue-800 p-2 rounded-full text-white">
-                  {service.icon}
+                <div className="absolute top-4 right-4 bg-blue-800 p-3 rounded-full text-white">
+                  <span className="text-2xl">{service.icon}</span>
                 </div>
               </div>
 
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-blue-800 mb-2">{service.title}</h3>
-                <p className="text-gray-600 mb-4">{service.description}</p>
+              <div className="p-8"> {/* Increased padding */}
+                <h3 className="text-2xl font-bold text-blue-800 mb-4">{service.title}</h3>
+                <p className="text-lg text-gray-600 mb-6">{service.description}</p>
 
                 <details className="group">
-                  <summary className="flex items-center justify-between cursor-pointer list-none">
-                    <span className="text-red-500 font-semibold">Learn More</span>
+                  <summary className="flex items-center justify-between cursor-pointer list-none p-3 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors">
+                    <span className="text-red-500 font-semibold text-lg">Learn More</span>
                     <span className="text-red-500 transform group-open:rotate-180 transition-transform duration-300">
-                      <FaTools />
+                      <FaTools className="text-xl" />
                     </span>
                   </summary>
                   <div className="mt-4 space-y-4">
