@@ -41,8 +41,18 @@ const AboutInnovator = () => {
   ];
 
   return (
-    <section id="innovator" className="py-24 bg-gradient-to-b from-blue-50 to-white">
+    <section id="innovator" className="pt-32 pb-24 bg-gradient-to-b from-blue-50 to-white">
       <div className="container mx-auto px-4">
+        {/* Main Heading */}
+        <div 
+          data-aos="fade-up" 
+          className="text-center mb-16"
+        >
+          <h1 className="text-5xl font-bold text-blue-800 mb-6">Meet The Innovator</h1>
+          <div className="w-40 h-2 bg-red-500 mx-auto"></div>
+        </div>
+
+        {/* Existing Card Content */}
         <div
           data-aos="fade-up"
           className="max-w-7xl mx-auto bg-white rounded-3xl shadow-2xl p-8 md:p-12"

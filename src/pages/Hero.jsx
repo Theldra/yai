@@ -4,7 +4,8 @@ import Aos from 'aos';
 import bgImage1 from '../assets/images/solarr.jpg';
 import bgImage2 from '../assets/images/service-2.jpg';
 import bgImage3 from '../assets/images/engineer.jpg';
-import bgImage4 from '../assets/images/panels.jpg';
+import bgImage4 from '../assets/images/sunpanel.jpg';
+import bgImage5 from '../assets/images/onsite.jpg';
 import { Link } from 'react-router-dom';
 
 const Hero = () => {
@@ -18,7 +19,7 @@ const Hero = () => {
   const deletingSpeed = 100;
   const pauseDuration = 2000;
 
-  const backgroundImages = [bgImage1, bgImage2, bgImage3, bgImage4];
+  const backgroundImages = [bgImage1, bgImage2, bgImage3, bgImage4,bgImage5];
 
   // Typewriter Effect
   useEffect(() => {

@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import 'aos/dist/aos.css';
 import Aos from 'aos';
-
-// Import your media files
 import trainingImg from '../assets/images/practice.jpeg';
 import trainingVideo from '../assets/videos/tutorial.mp4';
-import maintenanceImg from '../assets/images/maintain.jpeg';
+import maintenanceImg from '../assets/images/smainte.webp';
 import consultationImg from '../assets/images/consult.jpg';
 import { FaGraduationCap, FaLightbulb, FaTools, FaWrench } from 'react-icons/fa';
 
@@ -22,7 +20,7 @@ const AdditionalResources = () => {
   const services = [
     {
       id: 'training',
-      title: "Training Services",
+      title: "Training",
       description: "Comprehensive solar technology training programs",
       image: trainingImg,
       video: trainingVideo,
@@ -45,7 +43,7 @@ const AdditionalResources = () => {
     },
     {
       id: 'maintenance',
-      title: "Maintenance Services",
+      title: "Maintenance",
       description: "Professional solar system maintenance",
       image: maintenanceImg,
       icon: <FaWrench className="text-2xl" />,
@@ -67,7 +65,7 @@ const AdditionalResources = () => {
     },
     {
       id: 'consultation',
-      title: "Consultation Services",
+      title: "Consultation",
       description: "Expert advice and system planning",
       image: consultationImg,
       icon: <FaLightbulb className="text-2xl" />,
@@ -102,13 +100,14 @@ const AdditionalResources = () => {
   ];
 
   return (
-    <section className="py-20 bg-blue-50">
+    <section className="pt-32 pb-20 bg-blue-50"> 
       <div className="max-w-7xl mx-auto px-4"> 
         <div
           data-aos="fade-up"
           className="text-center mb-16" 
         >
-          <h2 className="text-4xl font-bold text-blue-800 mb-4">Our Services</h2>
+          <h2 className="text-5xl font-bold text-blue-800 mb-6">Our Services</h2>
+          <div className="w-40 h-2 bg-red-500 mx-auto mb-6"></div>
           <p className="text-xl text-blue-600">Expert solar solutions and training</p>
         </div>
 
@@ -119,7 +118,6 @@ const AdditionalResources = () => {
               data-aos="fade-up"
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
             >
-              {/* Increased image container height */}
               <div className="relative h-64 md:h-72 lg:h-80">
                 {service.video ? (
                   <video
@@ -142,7 +140,7 @@ const AdditionalResources = () => {
                 </div>
               </div>
 
-              <div className="p-8"> {/* Increased padding */}
+              <div className="p-8"> 
                 <h3 className="text-2xl font-bold text-blue-800 mb-4">{service.title}</h3>
                 <p className="text-lg text-gray-600 mb-6">{service.description}</p>
 

@@ -1,15 +1,14 @@
 import React, { useEffect } from 'react';
-import { FaBatteryFull, FaBolt, FaCheckCircle, FaPlug, FaSun } from 'react-icons/fa';
-import { MdCable, MdSolarPower } from 'react-icons/md';
+import { FaCheckCircle } from 'react-icons/fa';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import solarPanelImg from '../assets/images/solarpan.webp';
-import inverterImg from '../assets/images/energy.jpeg';
-import batteryImg from '../assets/images/sbattery.jpeg';
-import cableImg from '../assets/images/cables.jpg';
+import solarPanelImg from '../assets/images/solarpanel.webp';
+import inverterImg from '../assets/images/inverters.webp';
+import batteryImg from '../assets/images/battery.webp';
+import cableImg from '../assets/images/cabbb.jpg';
 import railsImg from '../assets/images/rrail.jpg';
-import breakerImg from '../assets/images/breaker.jpg';
-import connectorImg from '../assets/images/connectors.jpg';
+import breakerImg from '../assets/images/circuitb.jpg';
+import connectorImg from '../assets/images/pv-cable.webp';
 
 const Showcase = () => {
   useEffect(() => {
@@ -24,10 +23,8 @@ const Showcase = () => {
       title: "Solar Panels",
       description: "High-efficiency monocrystalline solar panels",
       image: solarPanelImg,
-      icon: <MdSolarPower />,
       specs: [
         "Efficiency: up to 21%",
-        "Warranty: 25 years",
         "Power output: 400W-550W",
         "Temperature coefficient: -0.35%/°C"
       ]
@@ -36,22 +33,18 @@ const Showcase = () => {
       title: "Inverters",
       description: "Grid-tie and hybrid inverters",
       image: inverterImg,
-      icon: <FaBolt />,
       specs: [
         "Efficiency: 97-98%",
         "WiFi monitoring",
-        "Multiple MPPT channels",
-        "Extended warranty available"
+        "Multiple MPPT channels"
       ]
     },
     {
       title: "Solar Batteries",
       description: "Lithium-ion storage solutions",
       image: batteryImg,
-      icon: <FaBatteryFull />,
       specs: [
         "Capacity: 5kWh-15kWh",
-        "10-year warranty",
         "DoD: up to 95%",
         "Scalable design"
       ]
@@ -60,11 +53,9 @@ const Showcase = () => {
       title: "Solar Cables",
       description: "UV-resistant PV cables",
       image: cableImg,
-      icon: <MdCable />,
       specs: [
         "Double insulated",
         "UV resistant",
-        "Temperature range: -40°C to 90°C",
         "TÜV certified"
       ]
     },
@@ -72,48 +63,43 @@ const Showcase = () => {
       title: "Mounting Rails",
       description: "Aluminum mounting systems",
       image: railsImg,
-      icon: <FaSun />,
       specs: [
         "Corrosion resistant",
         "Wind load tested",
-        "Easy installation",
-        "10-year warranty"
+        "Easy installation"
       ]
     },
     {
       title: "Circuit Breakers",
       description: "DC and AC protection devices",
       image: breakerImg,
-      icon: <FaPlug />,
       specs: [
         "Surge protection",
-        "Temperature monitoring",
         "Quick disconnect",
         "Safety certified"
       ]
     },
     {
-      title: "MC4 Connectors",
+      title: "Connectors",
       description: "High-quality solar panel connectors",
       image: connectorImg,
-      icon: <FaPlug />,
       specs: [
         "IP67 waterproof rating",
         "UV resistant material",
-        "Quick-lock mechanism",
-        "TÜV certified safety"
+        "Quick-lock mechanism"
       ]
     }
   ];
 
   return (
-    <section className="py-20 bg-blue-50">
+    <section className="pt-32 pb-20 bg-blue-50"> 
       <div className="container mx-auto px-4">
         <div
           data-aos="fade-up"
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-blue-800 mb-4">Our Equipment</h2>
+          <h2 className="text-5xl font-bold text-blue-800 mb-6">Our Equipments</h2>
+          <div className="w-40 h-2 bg-red-500 mx-auto mb-6"></div>
           <p className="text-xl text-blue-600">Quality solar components for reliable systems</p>
         </div>
 
@@ -125,23 +111,19 @@ const Showcase = () => {
               data-aos-delay={index * 100}
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
             >
-              {/* Increased height from h-48 to h-64 for better image display */}
               <div className="relative h-64 md:h-72 lg:h-80">
                 <img
                   src={item.image}
                   alt={item.title}
                   className="w-full h-full object-cover object-center"
                 />
-                <div className="absolute top-4 right-4 bg-blue-800 p-3 rounded-full text-white">
-                  <span className="text-xl">{item.icon}</span>
-                </div>
               </div>
 
-              <div className="p-8"> {/* Increased padding from p-6 to p-8 */}
+              <div className="p-8"> 
                 <h3 className="text-2xl font-bold text-blue-800 mb-3">{item.title}</h3>
                 <p className="text-gray-600 mb-6 text-lg">{item.description}</p>
                 
-                <div className="space-y-3"> {/* Increased spacing */}
+                <div className="space-y-3"> 
                   {item.specs.map((spec, idx) => (
                     <div key={idx} className="flex items-center space-x-3">
                       <FaCheckCircle className="text-red-500 flex-shrink-0 text-lg" />

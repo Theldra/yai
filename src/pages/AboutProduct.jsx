@@ -14,7 +14,7 @@ const AboutProduct = () => {
   }, []);
 
   // Main heading style
-  const mainHeading = "text-6xl font-bold text-blue-800 mb-6";
+  const mainHeading = "text-5xl font-bold text-blue-800 mb-6";
   // Section heading style
   const sectionHeading = "text-4xl font-bold text-blue-800 mb-6";
   // Card heading style
@@ -25,7 +25,7 @@ const AboutProduct = () => {
   const iconSize = "text-4xl";
 
   return (
-    <section id="about" className="py-20">
+    <section id="about" className="pt-32 pb-20"> 
       <div className="container mx-auto px-8">
         {/* About Us Heading */}
         <div data-aos="fade-up" className="text-center mb-16">
@@ -37,9 +37,25 @@ const AboutProduct = () => {
         <div data-aos="fade-up" className="max-w-7xl mx-auto bg-white rounded-2xl shadow-xl p-12 mb-16">
           <h2 className={sectionHeading}>Who We Are</h2>
           <p className={bodyText}>
-            E-Powers Construction was founded in 2020 with a clear mission: to accelerate the adoption of solar energy 
-            in Africa, reducing emissions and power crises.
+            E-Powers Construction is a leading renewable energy company specializing in solar power solutions, 
+            electrical installations, and sustainable energy systems. Founded in 2020, we provide comprehensive 
+            services ranging from solar installations and water pumping systems to power audits and maintenance. 
+            Our expertise extends across residential, commercial, and industrial sectors, delivering innovative 
+            solutions that address Africa's energy challenges while promoting environmental sustainability.
           </p>
+          <div className="mt-6">
+            <p className={bodyText}>
+              As certified professionals by the Energy Commission of Ghana, Ghana Water Company, and Environmental 
+              Protection Agency, we maintain the highest standards in:
+            </p>
+            <ul className="mt-4 space-y-2 list-disc list-inside">
+              <li className={bodyText}>Solar power system design and installation</li>
+              <li className={bodyText}>Solar-powered water pumping solutions</li>
+              <li className={bodyText}>Electrical engineering and consultancy</li>
+              <li className={bodyText}>Energy efficiency and sustainability services</li>
+              <li className={bodyText}>Technical training and capacity building</li>
+            </ul>
+          </div>
         </div>
 
         {/* Mission & Vision */}
