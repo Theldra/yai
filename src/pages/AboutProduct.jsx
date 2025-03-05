@@ -174,7 +174,8 @@ const AboutProduct = () => {
             <video
               className="w-full h-full object-cover"
               controls
-              poster="/path-to-thumbnail.jpg" // Optional: Add a thumbnail image
+              preload="metadata"
+              playsInline // Add this for better mobile experience
             >
               <source src={howItWorksVideo} type="video/mp4" />
               Your browser does not support the video tag.

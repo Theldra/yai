@@ -118,10 +118,10 @@ const AdditionalResources = () => {
               data-aos="fade-up"
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
             >
-              <div className="relative h-64 md:h-72 lg:h-80">
+              <div className="relative h-64 md:h-72 lg:h-80 flex items-center justify-center">
                 {service.video ? (
                   <video
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain p-4"
                     poster={service.image}
                     controls
                   >
@@ -132,7 +132,7 @@ const AdditionalResources = () => {
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover object-center"
+                    className="w-full h-full object-contain p-4"
                   />
                 )}
                 <div className="absolute top-4 right-4 bg-blue-800 p-3 rounded-full text-white">

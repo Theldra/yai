@@ -111,11 +111,12 @@ const Showcase = () => {
               data-aos-delay={index * 100}
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
             >
-              <div className="relative h-64 md:h-72 lg:h-80">
+              {/* Updated image container */}
+              <div className="relative h-64 md:h-72 lg:h-80 flex items-center justify-center overflow-hidden">
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-contain p-4" // Changed object-cover to object-contain and added padding
                 />
               </div>
 
