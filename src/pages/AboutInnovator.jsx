@@ -87,20 +87,14 @@ const AboutInnovator = () => {
 
               {/* Personal Details */}
               <div className="space-y-6 mb-10" data-aos="fade-up" data-aos-delay="100">
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="bg-blue-50 p-6 rounded-2xl">
-                    <p className="text-xl">
-                      <span className="font-semibold text-blue-800 block mb-2">Age</span>
-                      <span className="text-gray-600">18-35</span>
-                    </p>
-                  </div>
+                <div className="grid gap-6">
                   <div className="bg-blue-50 p-6 rounded-2xl">
                     <p className="text-xl">
                       <span className="font-semibold text-blue-800 block mb-2">Focus Area</span>
                       <span className="text-gray-600">Renewable Energy</span>
                     </p>
                   </div>
-                  <div className="bg-blue-50 p-6 rounded-2xl col-span-2">
+                  <div className="bg-blue-50 p-6 rounded-2xl">
                     <p className="text-xl">
                       <span className="font-semibold text-blue-800 block mb-2">Location</span>
                       <span className="text-gray-600">Sekondi, Western Region, Ghana</span>

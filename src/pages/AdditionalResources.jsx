@@ -4,7 +4,7 @@ import Aos from 'aos';
 import trainingImg from '../assets/images/practice.jpeg';
 import trainingVideo from '../assets/videos/tutorial.mp4';
 import maintenanceImg from '../assets/images/smainte.webp';
-import consultationImg from '../assets/images/consult.jpg';
+import consultationImg from '../assets/images/consultt.png';
 import { FaGraduationCap, FaLightbulb, FaTools, FaWrench } from 'react-icons/fa';
 
 const AdditionalResources = () => {

@@ -30,7 +30,7 @@ const Navbar = () => {
         <Link
             to={to}
             onClick={handleClick}
-            className={`transition-colors text-xl md:text-2xl w-full text-center py-4 ${
+            className={`transition-colors text-lg md:text-lg w-full text-center py-4 ${
                 isActive(to)
                     ? 'text-red-500 font-semibold' 
                     : 'text-white hover:text-blue-200' 
@@ -54,7 +54,7 @@ const Navbar = () => {
                                 alt="E-Power Construction Logo" 
                                 className="h-12 md:h-16 w-auto" // Responsive logo size
                             />
-                            <span className="text-xl md:text-3xl font-bold text-white">
+                            <span className="text-xl md:text-xl font-bold text-white">
                                 E-Powers
                                 <span className="hidden md:inline"> Construction</span>
                             </span>

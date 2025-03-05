@@ -22,7 +22,7 @@ const Footer = () => {
                 alt="E-Power Construction Logo" 
                 className="h-16 w-auto"
               />
-              <span className="text-2xl font-bold">E-Powers Construction</span>
+              <span className="text-xl font-bold">E-Powers Construction</span>
             </div>
             <p className="text-blue-200 text-lg leading-relaxed">
               Leading the way in innovative solar energy solutions, electrical installations, and sustainable power systems for residential, commercial, and industrial clients in Ghana.
@@ -31,8 +31,8 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-2xl font-semibold mb-6">Quick Links</h3>
-            <ul className="space-y-4">
+            <h3 className="text-xl font-semibold mb-6">Quick Links</h3>
+            <ul className="space-y-3">
               {[
                 { name: 'About', path: '/about' },
                 { name: 'Innovator', path: '/innovator' },
@@ -54,8 +54,8 @@ const Footer = () => {
 
           {/* Business Hours */}
           <div>
-            <h3 className="text-2xl font-semibold mb-6">Business Hours</h3>
-            <ul className="space-y-4">
+            <h3 className="text-xl font-semibold mb-6">Business Hours</h3>
+            <ul className="space-y-3">
               {businessHours.map((schedule, index) => (
                 <li key={index} className="flex items-center space-x-4">
                   <FaClock className="text-red-400 text-xl" />
@@ -70,8 +70,8 @@ const Footer = () => {
 
           {/* Contact Information */}
           <div>
-            <h3 className="text-2xl font-semibold mb-6">Contact Us</h3>
-            <ul className="space-y-4">
+            <h3 className="text-xl font-semibold mb-6">Contact Us</h3>
+            <ul className="space-y-3">
               <li className="flex items-center space-x-4">
                 <FaPhoneAlt className="text-red-400 text-xl" />
                 <span className="text-blue-200 text-lg">+233 (0) 592 812 035</span>
@@ -89,7 +89,7 @@ const Footer = () => {
 
           {/* Social Media Links */}
           <div className="md:col-span-2">
-            <h3 className="text-2xl font-semibold mb-6">Follow Us</h3>
+            <h3 className="text-xl font-semibold mb-6">Follow Us</h3>
             <div className="flex space-x-5">
               {[
                 { icon: <FaFacebookF />, url: "https://www.facebook.com/share/1FJzgYA6FU/?mibextid=wwXIfr" },
