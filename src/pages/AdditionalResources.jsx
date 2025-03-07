@@ -5,7 +5,7 @@ import trainingImg from '../assets/images/practice.jpeg';
 import trainingVideo from '../assets/videos/tutorial.mp4';
 import maintenanceImg from '../assets/images/smainte.webp';
 import consultationImg from '../assets/images/consultt.png';
-import { FaGraduationCap, FaLightbulb, FaTools, FaWrench } from 'react-icons/fa';
+import { FaGraduationCap, FaLightbulb, FaWrench } from 'react-icons/fa';
 
 const AdditionalResources = () => {
   const [activeSection, setActiveSection] = useState(null);
@@ -145,11 +145,8 @@ const AdditionalResources = () => {
                 <p className="text-lg text-gray-600 mb-6">{service.description}</p>
 
                 <details className="group">
-                  <summary className="flex items-center justify-between cursor-pointer list-none p-3 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors">
+                  <summary className="flex justify-center cursor-pointer list-none p-3 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors">
                     <span className="text-red-500 font-semibold text-lg">Learn More</span>
-                    <span className="text-red-500 transform group-open:rotate-180 transition-transform duration-300">
-                      <FaTools className="text-xl" />
-                    </span>
                   </summary>
                   <div className="mt-4 space-y-4">
                     <p className="text-gray-600">{service.details.overview}</p>
