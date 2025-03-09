@@ -19,7 +19,7 @@ const Hero = () => {
   const deletingSpeed = 100;
   const pauseDuration = 2000;
 
-  const backgroundImages = [bgImage1, bgImage2, bgImage3, bgImage4,bgImage5];
+  const backgroundImages = [bgImage1, bgImage2, bgImage3, bgImage4, bgImage5];
 
   // Typewriter Effect
   useEffect(() => {
@@ -70,12 +70,29 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative h-screen overflow-hidden flex">
-      {/* Content Section - Left Side */}
-      <div className="w-1/2 bg-blue-900 flex items-center justify-center relative z-20">
+    <div className="relative h-screen overflow-hidden">
+      {/* Background Images */}
+      {backgroundImages.map((image, index) => (
+        <div
+          key={index}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+            index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
+          <div className="absolute inset-0 bg-black/50 z-10" /> {/* Dark overlay for better text visibility */}
+          <img
+            src={image}
+            alt={`Slide ${index + 1}`}
+            className="w-full h-full object-cover"
+          />
+        </div>
+      ))}
+
+      {/* Content Section */}
+      <div className="relative z-20 h-full flex items-center justify-center">
         <div 
-          data-aos="fade-right"
-          className="text-white px-12"
+          data-aos="fade-up"
+          className="text-center text-white px-8 max-w-5xl"
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             {text}
@@ -84,7 +101,7 @@ const Hero = () => {
           <p 
             data-aos="fade-up"
             data-aos-delay="400"
-            className="text-2xl mb-8 text-blue-200"
+            className="text-2xl mb-8 text-gray-200"
           >
             Empowering Africa through sustainable solar solutions
           </p>
@@ -97,44 +114,6 @@ const Hero = () => {
             Get Started
           </Link>
         </div>
-      </div>
-
-      {/* Moon-shaped Separator */}
-      <div className="absolute h-full w-32 left-1/2 transform -translate-x-1/2 z-10">
-        <svg
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-          className="h-full w-full"
-          fill="rgb(30, 58, 138)"
-        >
-          <path
-            d="M0,0 
-               C35,25 35,75 0,100
-               L50,100
-               C85,75 85,25 50,0
-               Z"
-            className="transition-all duration-700 ease-in-out"
-          />
-        </svg>
-      </div>
-
-      {/* Image Section - Right Side */}
-      <div className="w-1/2 relative overflow-hidden">
-        {backgroundImages.map((image, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-            }`}
-          >
-            <div className="absolute inset-0 bg-blue-900/30 z-10" /> {/* Blue overlay */}
-            <img
-              src={image}
-              alt={`Slide ${index + 1}`}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        ))}
       </div>
     </div>
   );

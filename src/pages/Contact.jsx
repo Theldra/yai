@@ -77,11 +77,11 @@ const Contact = () => {
         >
           <div className="flex flex-col md:flex-row">
             {/* Contact Information */}
-            <div className="md:w-2/5 bg-blue-900 p-8 text-white">
+            <div className="md:w-2/5 bg-blue-800 p-8 text-white">
               <h2 className="text-3xl font-bold mb-8" data-aos="fade-right">Contact Us</h2>
               <div className="space-y-6">
                 <div className="flex items-center space-x-4" data-aos="fade-right" data-aos-delay="100">
-                  <div className="bg-blue-800 p-3 rounded-full">
+                  <div className="bg-blue-700 p-3 rounded-full">
                     <FaPhoneAlt className="text-white text-xl" />
                   </div>
                   <div>
@@ -91,7 +91,7 @@ const Contact = () => {
                 </div>
                 
                 <div className="flex items-center space-x-4" data-aos="fade-right" data-aos-delay="200">
-                  <div className="bg-blue-800 p-3 rounded-full">
+                  <div className="bg-blue-700 p-3 rounded-full">
                     <FaEnvelope className="text-white text-xl" />
                   </div>
                   <div>
@@ -101,7 +101,7 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-center space-x-4" data-aos="fade-right" data-aos-delay="300">
-                  <div className="bg-blue-800 p-3 rounded-full">
+                  <div className="bg-blue-700 p-3 rounded-full">
                     <FaMapMarkerAlt className="text-white text-xl" />
                   </div>
                   <div>
@@ -120,7 +120,7 @@ const Contact = () => {
                       href={social.url} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="bg-blue-800 p-3 rounded-full hover:bg-red-500 transition-colors"
+                      className="bg-blue-700 p-3 rounded-full hover:bg-red-500 transition-colors"
                       data-aos="fade-up"
                       data-aos-delay={index * 100}
                     >
@@ -135,7 +135,7 @@ const Contact = () => {
 
             {/* Contact Form */}
             <div className="md:w-3/5 p-8">
-              <h2 className="text-3xl font-bold text-blue-900 mb-8" data-aos="fade-left">Send Message</h2>
+              <h2 className="text-3xl font-bold text-blue-800 mb-8" data-aos="fade-left">Send Message</h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div data-aos="fade-left" data-aos-delay="100">
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
@@ -199,7 +199,7 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-blue-900 text-white py-3 px-6 rounded-md hover:bg-red-500 transition-colors font-semibold"
+                  className="w-full bg-blue-800 text-white py-3 px-6 rounded-md hover:bg-red-500 transition-colors font-semibold"
                   data-aos="fade-up"
                 >
                   Send Message

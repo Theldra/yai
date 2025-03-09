@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import 'aos/dist/aos.css';
 import Aos from 'aos';
-import { MdVerified, MdWaterDrop } from 'react-icons/md';
-import { FaLeaf, FaCheckCircle } from 'react-icons/fa';
+import { MdWaterDrop } from 'react-icons/md';
+import { FaCheckCircle } from 'react-icons/fa';
 import howItWorksVideo from '../assets/videos/howitworks.mp4';
 
 const AboutProduct = () => {
@@ -45,8 +45,7 @@ const AboutProduct = () => {
           </p>
           <div className="mt-6">
             <p className={bodyText}>
-              As certified professionals by the Energy Commission of Ghana, Ghana Water Company, and Environmental 
-              Protection Agency, we maintain the highest standards in:
+              As certified professionals by the Energy Commission of Ghana, we maintain the highest standards in:
             </p>
             <ul className="mt-4 space-y-2 list-disc list-inside">
               <li className={bodyText}>Solar power system design and installation</li>
@@ -175,7 +174,7 @@ const AboutProduct = () => {
               className="w-full h-full object-cover"
               controls
               preload="metadata"
-              playsInline // Add this for better mobile experience
+              playsInline
             >
               <source src={howItWorksVideo} type="video/mp4" />
               Your browser does not support the video tag.
@@ -185,27 +184,6 @@ const AboutProduct = () => {
             Watch our short video to understand how our solar solutions work and how they can benefit your home or business. 
             From initial consultation to installation and maintenance, we guide you through every step of your solar journey.
           </p>
-        </div>
-
-        {/* Accreditations & Approvals */}
-        <div data-aos="fade-up" className="max-w-7xl mx-auto bg-white rounded-2xl shadow-xl p-12 mb-16">
-          <h2 className={sectionHeading}>Accreditations & Approvals</h2>
-          <p className={bodyText}>
-            E-Powers Construction is officially recognized and approved by key regulatory bodies in Ghana:
-          </p>
-          <div className="grid md:grid-cols-3 gap-10 mt-10">
-            {[
-              { icon: <MdVerified />, title: "Energy Commission", desc: "Certified for renewable energy solutions" },
-              { icon: <MdWaterDrop />, title: "Ghana Water", desc: "Approved for water management systems" },
-              { icon: <FaLeaf />, title: "EPA", desc: "Environmental Protection Agency certified" }
-            ].map((item) => (
-              <div key={item.title} className="flex flex-col items-center p-8 bg-blue-50 rounded-xl">
-                <div className={`${iconSize} text-red-500 mb-4`}>{item.icon}</div>
-                <h3 className="text-2xl font-bold text-blue-800 mb-3">{item.title}</h3>
-                <p className={bodyText}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>

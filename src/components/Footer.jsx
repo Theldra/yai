@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaClock, FaEnvelope, FaFacebookF, FaInstagram, FaLinkedinIn, FaMapMarkerAlt, FaPhoneAlt, FaTiktok } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
-import logo from '../assets/images/epowers.png';
+import logo from '../assets/images/repowers.png';
 
 const Footer = () => {
   const businessHours = [
@@ -11,7 +11,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-blue-900 text-white py-16">
+    <footer className="bg-gradient-to-r from-blue-800 to-blue-900 text-white py-16">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
           {/* Logo and Description */}
@@ -58,7 +58,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {businessHours.map((schedule, index) => (
                 <li key={index} className="flex items-center space-x-4">
-                  <FaClock className="text-red-400 text-xl" />
+                  <FaClock className="text-red-500 text-xl" />
                   <div>
                     <p className="text-blue-200 font-medium text-lg">{schedule.day}</p>
                     <p className="text-blue-200 text-lg">{schedule.hours}</p>
@@ -73,15 +73,15 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-6">Contact Us</h3>
             <ul className="space-y-3">
               <li className="flex items-center space-x-4">
-                <FaPhoneAlt className="text-red-400 text-xl" />
+                <FaPhoneAlt className="text-red-500 text-xl" />
                 <span className="text-blue-200 text-lg">+233 (0) 592 812 035</span>
               </li>
               <li className="flex items-center space-x-4">
-                <FaEnvelope className="text-red-400 text-xl" />
+                <FaEnvelope className="text-red-500 text-xl" />
                 <span className="text-blue-200 text-lg">info@epowerconstruction.com</span>
               </li>
               <li className="flex items-center space-x-4">
-                <FaMapMarkerAlt className="text-red-400 text-xl" />
+                <FaMapMarkerAlt className="text-red-500 text-xl" />
                 <span className="text-blue-200 text-lg">Sekondi, Western Region, Ghana</span>
               </li>
             </ul>
@@ -103,7 +103,7 @@ const Footer = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-blue-800 p-4 rounded-full hover:bg-red-500 transition-colors duration-300"
+                  className="bg-blue-700 p-4 rounded-full hover:bg-red-500 transition-colors duration-300"
                 >
                   <span className="text-white text-2xl">
                     {social.icon}
