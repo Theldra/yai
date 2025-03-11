@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import 'aos/dist/aos.css';
 import Aos from 'aos';
-import { MdWaterDrop } from 'react-icons/md';
 import { FaCheckCircle } from 'react-icons/fa';
 import howItWorksVideo from '../assets/videos/howitworks.mp4';
 
@@ -34,7 +33,7 @@ const AboutProduct = () => {
         </div>
 
         {/* Company Overview */}
-        <div data-aos="fade-up" className="max-w-7xl mx-auto bg-white rounded-2xl shadow-xl p-12 mb-16">
+        <div data-aos="fade-up" className="max-w-7xl mx-auto bg-blue-50 rounded-2xl shadow-xl p-12 mb-16">
           <h2 className={sectionHeading}>Who We Are</h2>
           <p className={bodyText}>
             E-Powers Construction is a leading renewable energy company specializing in solar power solutions, 
@@ -91,29 +90,6 @@ const AboutProduct = () => {
                   {system === 'Off-Grid Systems' && 'Independent solar solutions for remote areas'}
                   {system === 'Grid-Tied Systems' && 'Harness solar energy while connected to the grid'}
                 </p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Water Systems - Visual Cards */}
-        <div
-          data-aos="fade-up"
-          className="max-w-6xl mx-auto bg-blue-50 rounded-2xl shadow-xl p-12 mb-20"
-        >
-          <h2 className="text-4xl font-bold text-blue-800 text-center mb-12">Solar-Powered Water Systems</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { title: 'Agriculture', desc: 'Irrigation systems for farms' },
-              { title: 'Communities', desc: 'Clean water supply systems' },
-              { title: 'Industries', desc: 'Consistent water flow solutions' }
-            ].map((item) => (
-              <div key={item.title} 
-                className="bg-white rounded-xl p-8 text-center transform hover:-translate-y-2 transition-transform duration-300"
-              >
-                <MdWaterDrop className="text-5xl text-red-500 mx-auto mb-4" />
-                <h3 className="text-2xl font-bold text-blue-800 mb-4">{item.title}</h3>
-                <p className="text-lg text-gray-600">{item.desc}</p>
               </div>
             ))}
           </div>

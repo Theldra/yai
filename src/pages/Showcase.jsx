@@ -202,43 +202,55 @@ const Showcase = () => {
   const [activeQuote, setActiveQuote] = useState(null);
 
   return (
-    <section className="pt-32 pb-20 bg-blue-50"> 
+    <section className="pt-32 pb-20 bg-blue-50" role="region" aria-label="Product showcase"> 
       <div className="container mx-auto px-4">
         {/* Our Equipments Section */}
         <div data-aos="fade-up" className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-blue-800 mb-6">Our Equipments</h2>
-          <div className="w-40 h-2 bg-red-500 mx-auto mb-6"></div>
+          <h1 className="text-5xl font-bold text-blue-800 mb-6" role="heading" aria-level="1">Our Equipments</h1>
+          <div className="w-40 h-2 bg-red-500 mx-auto mb-6" role="presentation"></div>
           <p className="text-xl text-blue-600">Quality solar components for reliable systems</p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div 
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          role="list"
+          aria-label="Solar equipment list"
+        >
           {equipment.map((item, index) => (
             <div
               key={index}
               data-aos="fade-up"
               data-aos-delay={index * 100}
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+              role="listitem"
             >
               <div className="relative h-64 md:h-72 lg:h-80 flex items-center justify-center overflow-hidden">
                 <img
                   src={item.image}
-                  alt={item.title}
+                  alt={`${item.title} - ${item.description}`}
                   className="w-full h-full object-contain p-4"
                 />
               </div>
 
               <div className="p-8"> 
-                <h3 className="text-2xl font-bold text-blue-800 mb-3">{item.title}</h3>
+                <h2 className="text-2xl font-bold text-blue-800 mb-3" role="heading" aria-level="2">{item.title}</h2>
                 <p className="text-gray-600 mb-6 text-lg">{item.description}</p>
                 
                 <div className="text-center">
                   <details className="inline-block">
-                    <summary className="cursor-pointer text-red-500 hover:text-red-600 font-semibold">
+                    <summary 
+                      className="cursor-pointer text-red-500 hover:text-red-600 font-semibold focus:outline-none focus:ring-2 focus:ring-red-500 rounded px-2 py-1"
+                      aria-label={`Show specifications for ${item.title}`}
+                    >
                       Learn More
                     </summary>
-                    <div className="mt-4 space-y-3 text-left"> 
+                    <div 
+                      className="mt-4 space-y-3 text-left"
+                      role="list"
+                      aria-label={`${item.title} specifications`}
+                    > 
                       {item.specs.map((spec, idx) => (
-                        <div key={idx} className="text-gray-600">{spec}</div>
+                        <div key={idx} className="text-gray-600" role="listitem">{spec}</div>
                       ))}
                     </div>
                   </details>
@@ -250,32 +262,38 @@ const Showcase = () => {
 
         {/* Our Packages Section */}
         <div data-aos="fade-up" className="text-center mt-20 mb-16">
-          <h2 className="text-5xl font-bold text-blue-800 mb-6">Our Packages</h2>
-          <div className="w-40 h-2 bg-red-500 mx-auto mb-6"></div>
-          <p className="text-xl text-blue-600">"Ignite your energy future with our custom installation packages."</p>
+          <h2 className="text-5xl font-bold text-blue-800 mb-6" role="heading" aria-level="2">Our Packages</h2>
+          <div className="w-40 h-2 bg-red-500 mx-auto mb-6" role="presentation"></div>
+          <p className="text-xl text-blue-600">Ignite your energy future with our custom installation packages</p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div 
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          role="list"
+          aria-label="Solar packages list"
+        >
           {packages.map((pkg, index) => (
             <div
               key={index}
               data-aos="fade-up"
               data-aos-delay={index * 100}
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+              role="listitem"
             >
-              {/* Package Image */}
               <div className="relative h-64 md:h-72 lg:h-80">
                 <img
                   src={pkg.image}
-                  alt={`${pkg.kVA} Package`}
+                  alt={`${pkg.kVA} Solar System Package`}
                   className="w-full h-full object-cover"
                 />
               </div>
 
-              {/* Package Details */}
               <div className="p-6">
-                <h3 className="text-2xl font-bold text-blue-800 mb-4">{pkg.kVA} SOLAR SYSTEM</h3>
-                <ul className="list-disc list-inside space-y-2 text-gray-700">
+                <h3 className="text-2xl font-bold text-blue-800 mb-4" role="heading" aria-level="3">{pkg.kVA} SOLAR SYSTEM</h3>
+                <ul 
+                  className="list-disc list-inside space-y-2 text-gray-700"
+                  aria-label={`${pkg.kVA} package contents`}
+                >
                   {pkg.items.map((item, i) => (
                     <li key={i}>{item}</li>
                   ))}
@@ -283,27 +301,34 @@ const Showcase = () => {
                 <div className="mt-6">
                   {activeQuote === index ? (
                     <div className="space-y-4">
-                      <div className="flex justify-center space-x-4">
+                      <div 
+                        className="flex justify-center space-x-4"
+                        role="group"
+                        aria-label="Contact options"
+                      >
                         <a
                           href="https://wa.me/233592812035"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center space-x-2 bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors"
+                          className="flex items-center space-x-2 bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+                          aria-label={`Contact via WhatsApp about ${pkg.kVA} package`}
                         >
-                          <FaWhatsapp className="text-xl" />
+                          <FaWhatsapp className="text-xl" aria-hidden="true" />
                           <span>WhatsApp</span>
                         </a>
                         <a
                           href="tel:+233592812035"
-                          className="flex items-center space-x-2 bg-blue-800 text-white py-2 px-4 rounded-lg hover:bg-red-500 transition-colors"
+                          className="flex items-center space-x-2 bg-blue-800 text-white py-2 px-4 rounded-lg hover:bg-red-500 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                          aria-label={`Call us about ${pkg.kVA} package`}
                         >
-                          <FaPhoneAlt className="text-xl" />
+                          <FaPhoneAlt className="text-xl" aria-hidden="true" />
                           <span>Call</span>
                         </a>
                       </div>
                       <button
                         onClick={() => setActiveQuote(null)}
-                        className="text-gray-600 hover:text-gray-800 text-sm"
+                        className="text-gray-600 hover:text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500 rounded px-2 py-1"
+                        aria-label="Cancel quote request"
                       >
                         Cancel
                       </button>
@@ -311,7 +336,8 @@ const Showcase = () => {
                   ) : (
                     <button
                       onClick={() => setActiveQuote(index)}
-                      className="w-full bg-blue-800 text-white py-2 px-4 rounded-lg hover:bg-red-500 transition-colors"
+                      className="w-full bg-blue-800 text-white py-2 px-4 rounded-lg hover:bg-red-500 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                      aria-label={`Get a quote for ${pkg.kVA} package`}
                     >
                       Get a Quote
                     </button>
@@ -321,7 +347,6 @@ const Showcase = () => {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

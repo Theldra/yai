@@ -70,7 +70,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative h-screen overflow-hidden">
+    <div className="relative min-h-screen h-[100svh] overflow-hidden" role="region" aria-label="Hero section">
       {/* Background Images */}
       {backgroundImages.map((image, index) => (
         <div
@@ -78,30 +78,32 @@ const Hero = () => {
           className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
             index === currentImageIndex ? 'opacity-100' : 'opacity-0'
           }`}
+          aria-hidden={index !== currentImageIndex}
         >
-          <div className="absolute inset-0 bg-black/50 z-10" /> {/* Dark overlay for better text visibility */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/50 z-10" aria-hidden="true" />
           <img
             src={image}
-            alt={`Slide ${index + 1}`}
+            alt={`Solar installation showcase image ${index + 1}`}
             className="w-full h-full object-cover"
+            role="img"
           />
         </div>
       ))}
 
       {/* Content Section */}
-      <div className="relative z-20 h-full flex items-center justify-center">
+      <div className="relative z-20 h-full flex items-center justify-center px-4 sm:px-6 lg:px-8">
         <div 
           data-aos="fade-up"
-          className="text-center text-white px-8 max-w-5xl"
+          className="text-center w-full max-w-7xl mx-auto"
         >
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            {text}
-            <span className="text-red-500 animate-pulse">|</span>
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 text-white tracking-tight" role="heading" aria-level="1">
+            <span aria-live="polite">{text}</span>
+            <span className="text-red-500 animate-pulse" aria-hidden="true">|</span>
           </h1>
           <p 
             data-aos="fade-up"
             data-aos-delay="400"
-            className="text-2xl mb-8 text-gray-200"
+            className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 text-gray-200 max-w-3xl mx-auto"
           >
             Empowering Africa through sustainable solar solutions
           </p>
@@ -109,7 +111,9 @@ const Hero = () => {
             to="/showcase"
             data-aos="fade-up"
             data-aos-delay="600"
-            className="inline-block bg-red-500 text-white px-8 py-4 rounded-lg text-xl font-semibold hover:bg-red-600 transition-colors"
+            className="inline-block bg-red-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-xl font-semibold hover:bg-red-600 transition-colors transform hover:scale-105 duration-300 shadow-lg hover:shadow-xl"
+            aria-label="View our showcase"
+            role="button"
           >
             Get Started
           </Link>
