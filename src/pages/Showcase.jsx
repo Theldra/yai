@@ -11,14 +11,13 @@ import railsImg from '../assets/images/rrail.jpg';
 import breakerImg from '../assets/images/circuitb.jpg';
 import connectorImg from '../assets/images/pv-cable.webp';
 
-// Example package images (replace these with your actual imports)
-// import package1_5kva from '../assets/images/packages/1_5kva.jpg';
-// import package3kva from '../assets/images/packages/3kva.jpg';
-// import package5kva from '../assets/images/packages/5kva.jpg';
-// import package10kva from '../assets/images/packages/10kva.jpg';
-// import package15kva from '../assets/images/packages/15kva.jpg';
-// import package20kva from '../assets/images/packages/20kva.jpg';
-// import package30kva from '../assets/images/packages/30kva.jpg';
+ import package1_5kva from '../assets/images/pack1.png';
+ import package3kva from '../assets/images/pack2.png';
+ import package5kva from '../assets/images/pack3.png';
+ import package10kva from '../assets/images/pack4.png';
+import package15kva from '../assets/images/pack5.png';
+ import package20kva from '../assets/images/pack6.png';
+import package30kva from '../assets/images/pack7.png';
 
 const Showcase = () => {
   useEffect(() => {
@@ -104,7 +103,7 @@ const Showcase = () => {
   const packages = [
     {
       kVA: '1.5kVA',
-      image: 'path-to-1.5kva-image',
+      image: package1_5kva,
       items: [
         '2-3 LED Bulbs',
         '1-2 Fans',
@@ -116,7 +115,7 @@ const Showcase = () => {
     },
     {
       kVA: '3kVA',
-      image: 'path-to-3kva-image', 
+      image: package3kva, 
       items: [
         '5-6 LED Bulbs',
         '2-3 Fans',
@@ -129,7 +128,7 @@ const Showcase = () => {
     },
     {
       kVA: '5kVA',
-      image: 'path-to-5kva-image', 
+      image: package5kva, 
       items: [
         '10-12 LED Bulbs',
         '4-5 Fans',
@@ -143,7 +142,7 @@ const Showcase = () => {
     },
     {
       kVA: '10kVA',
-      image: 'path-to-10kva-image', 
+      image: package10kva, 
       items: [
         '20-25 LED Bulbs',
         '8-10 Fans',
@@ -157,7 +156,7 @@ const Showcase = () => {
     },
     {
       kVA: '15kVA',
-      image: 'path-to-15kva-image', 
+      image: package15kva, 
       items: [
         '30-40 LED Bulbs',
         '12-15 Fans',
@@ -171,7 +170,7 @@ const Showcase = () => {
     },
     {
       kVA: '20kVA',
-      image: 'path-to-20kva-image', 
+      image: package20kva, 
       items: [
         '40-50 LED Bulbs',
         '15-20 Fans',
@@ -185,7 +184,7 @@ const Showcase = () => {
     },
     {
       kVA: '30kVA',
-      image: 'path-to-30kva-image', 
+      image: package30kva, 
       items: [
         '60-80 LED Bulbs',
         '20-25 Fans',
@@ -224,7 +223,7 @@ const Showcase = () => {
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
               role="listitem"
             >
-              <div className="relative h-64 md:h-72 lg:h-80 flex items-center justify-center overflow-hidden">
+              <div className="relative h-48 md:h-56 lg:h-60 flex items-center justify-center overflow-hidden">
                 <img
                   src={item.image}
                   alt={`${item.title} - ${item.description}`}
@@ -232,25 +231,25 @@ const Showcase = () => {
                 />
               </div>
 
-              <div className="p-8"> 
-                <h2 className="text-2xl font-bold text-blue-800 mb-3" role="heading" aria-level="2">{item.title}</h2>
-                <p className="text-gray-600 mb-6 text-lg">{item.description}</p>
+              <div className="p-4"> 
+                <h2 className="text-lg font-bold text-blue-800 mb-2" role="heading" aria-level="2">{item.title}</h2>
+                <p className="text-gray-600 mb-4 text-sm">{item.description}</p>
                 
                 <div className="text-center">
                   <details className="inline-block">
                     <summary 
-                      className="cursor-pointer text-red-500 hover:text-red-600 font-semibold focus:outline-none focus:ring-2 focus:ring-red-500 rounded px-2 py-1"
+                      className="cursor-pointer text-red-500 hover:text-red-600 font-semibold focus:outline-none focus:ring-2 focus:ring-red-500 rounded px-2 py-1 text-sm"
                       aria-label={`Show specifications for ${item.title}`}
                     >
                       Learn More
                     </summary>
                     <div 
-                      className="mt-4 space-y-3 text-left"
+                      className="mt-3 space-y-2 text-left"
                       role="list"
                       aria-label={`${item.title} specifications`}
                     > 
                       {item.specs.map((spec, idx) => (
-                        <div key={idx} className="text-gray-600" role="listitem">{spec}</div>
+                        <div key={idx} className="text-gray-600 text-sm leading-tight" role="listitem">{spec}</div>
                       ))}
                     </div>
                   </details>
@@ -280,29 +279,31 @@ const Showcase = () => {
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
               role="listitem"
             >
-              <div className="relative h-64 md:h-72 lg:h-80">
+              <div className="relative h-48 md:h-56 lg:h-60 flex items-center justify-center overflow-hidden bg-gray-50">
                 <img
                   src={pkg.image}
                   alt={`${pkg.kVA} Solar System Package`}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain p-4"
                 />
               </div>
 
-              <div className="p-6">
-                <h3 className="text-2xl font-bold text-blue-800 mb-4" role="heading" aria-level="3">{pkg.kVA} SOLAR SYSTEM</h3>
+              <div className="p-4">
+                <h3 className="text-xl font-bold text-blue-800 mb-2" role="heading" aria-level="3">
+                  {pkg.kVA === '5kVA' || pkg.kVA === '20kVA' ? pkg.kVA : `${pkg.kVA} SOLAR SYSTEM`}
+                </h3>
                 <ul 
-                  className="list-disc list-inside space-y-2 text-gray-700"
+                  className="list-disc list-inside space-y-1 text-gray-700 text-sm"
                   aria-label={`${pkg.kVA} package contents`}
                 >
                   {pkg.items.map((item, i) => (
-                    <li key={i}>{item}</li>
+                    <li key={i} className="leading-tight">{item}</li>
                   ))}
                 </ul>
-                <div className="mt-6">
+                <div className="mt-4">
                   {activeQuote === index ? (
-                    <div className="space-y-4">
+                    <div className="space-y-2">
                       <div 
-                        className="flex justify-center space-x-4"
+                        className="flex justify-center space-x-3"
                         role="group"
                         aria-label="Contact options"
                       >
@@ -310,24 +311,24 @@ const Showcase = () => {
                           href="https://wa.me/233592812035"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center space-x-2 bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+                          className="flex items-center space-x-1 bg-green-600 text-white py-1.5 px-3 rounded-lg hover:bg-green-700 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 text-sm"
                           aria-label={`Contact via WhatsApp about ${pkg.kVA} package`}
                         >
-                          <FaWhatsapp className="text-xl" aria-hidden="true" />
+                          <FaWhatsapp className="text-lg" aria-hidden="true" />
                           <span>WhatsApp</span>
                         </a>
                         <a
                           href="tel:+233592812035"
-                          className="flex items-center space-x-2 bg-blue-800 text-white py-2 px-4 rounded-lg hover:bg-red-500 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                          className="flex items-center space-x-1 bg-blue-800 text-white py-1.5 px-3 rounded-lg hover:bg-red-500 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 text-sm"
                           aria-label={`Call us about ${pkg.kVA} package`}
                         >
-                          <FaPhoneAlt className="text-xl" aria-hidden="true" />
+                          <FaPhoneAlt className="text-lg" aria-hidden="true" />
                           <span>Call</span>
                         </a>
                       </div>
                       <button
                         onClick={() => setActiveQuote(null)}
-                        className="text-gray-600 hover:text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500 rounded px-2 py-1"
+                        className="text-gray-600 hover:text-gray-800 text-xs focus:outline-none focus:ring-2 focus:ring-gray-500 rounded px-2 py-1"
                         aria-label="Cancel quote request"
                       >
                         Cancel
@@ -336,7 +337,7 @@ const Showcase = () => {
                   ) : (
                     <button
                       onClick={() => setActiveQuote(index)}
-                      className="w-full bg-blue-800 text-white py-2 px-4 rounded-lg hover:bg-red-500 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                      className="w-full bg-blue-800 text-white py-1.5 px-4 rounded-lg hover:bg-red-500 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 text-sm"
                       aria-label={`Get a quote for ${pkg.kVA} package`}
                     >
                       Get a Quote

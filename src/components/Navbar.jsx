@@ -30,7 +30,7 @@ const Navbar = () => {
         <Link
             to={to}
             onClick={handleClick}
-            className={`transition-colors text-lg md:text-lg w-full text-center py-4 focus:outline-none focus-visible:bg-blue-700/50 rounded-lg ${
+            className={`transition-colors text-base md:text-base w-full text-center py-1.5 focus:outline-none focus-visible:bg-blue-700/50 rounded-lg ${
                 isActive(to)
                     ? 'text-red-500 font-semibold' 
                     : 'text-white hover:text-blue-200' 
@@ -48,26 +48,26 @@ const Navbar = () => {
             role="navigation"
             aria-label="Main navigation"
         >
-            <div className="container mx-auto px-4 relative">
-                <div className="flex justify-between items-center py-4">
+            <div className="container mx-auto px-2 relative">
+                <div className="flex justify-between items-center py-1">
                     <Link 
                         to="/" 
                         onClick={handleClick}
-                        className="focus:outline-none focus-visible:bg-blue-700/50 rounded-lg p-1"
+                        className="focus:outline-none focus-visible:bg-blue-700/50 rounded-lg p-0.5"
                         aria-label="E-Powers Construction - Home"
                     >
                         <div 
                             data-aos="fade-right"
-                            className="flex items-center space-x-3"
+                            className="flex items-center space-x-2"
                         >
                             <img 
                                 src={logo} 
                                 alt="E-Power Construction Logo" 
-                                className="h-10 md:h-16 w-auto"
-                                width="64"
-                                height="64"
+                                className="h-8 md:h-10 w-auto"
+                                width="40"
+                                height="40"
                             />
-                            <span className="text-xl md:text-xl font-bold text-white">
+                            <span className="text-base md:text-lg font-bold text-white">
                                 E-Powers
                                 <span className="hidden md:inline"> Construction</span>
                             </span>
@@ -75,18 +75,18 @@ const Navbar = () => {
                     </Link>
 
                     <button 
-                        className="md:hidden text-white hover:text-red-500 transition-colors z-50 p-2 focus:outline-none focus-visible:bg-blue-700/50 rounded-lg"
+                        className="md:hidden text-white hover:text-red-500 transition-colors z-50 p-1 focus:outline-none focus-visible:bg-blue-700/50 rounded-lg"
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
                         aria-expanded={isMenuOpen}
                         aria-controls="mobile-menu"
                         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                     >
-                        {isMenuOpen ? <MdClose size={32} aria-hidden="true" /> : <MdMenu size={32} aria-hidden="true" />}
+                        {isMenuOpen ? <MdClose size={24} aria-hidden="true" /> : <MdMenu size={24} aria-hidden="true" />}
                     </button>
 
                     {/* Desktop Menu */}
                     <div 
-                        className="hidden md:flex space-x-8" 
+                        className="hidden md:flex space-x-4" 
                         data-aos="fade-left"
                         role="menubar"
                         aria-label="Desktop navigation"
@@ -103,7 +103,7 @@ const Navbar = () => {
                 {isMenuOpen && (
                     <div 
                         id="mobile-menu"
-                        className="fixed inset-0 top-[74px] bg-gradient-to-r from-blue-800 to-blue-900 z-40"
+                        className="fixed inset-0 top-[42px] bg-gradient-to-r from-blue-800 to-blue-900 z-40"
                         role="menu"
                         aria-label="Mobile navigation"
                     >
